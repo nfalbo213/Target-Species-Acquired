@@ -115,7 +115,7 @@ function burgerSpin() {
         // Adjust aria-expanded
         hamburger.ariaExpanded = 'true';
         $("#navbar").animate({
-            height: "70%",
+            height: "100%",
             opacity: ".98"
         }, 200);
         setTimeout(delayedAnimation, 50);
