@@ -1,0 +1,33 @@
+/*
+Copyright 2022 Nick Falbo
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+// Variables
+const buttonArr = document.querySelectorAll('.button-class');
+
+// Exported Functions
+function targetGrow (event, target) {
+    event.preventDefault;
+    if (target.id === "cart") {
+        target.style.transform = "scale(1.05)";
+    } else {
+        target.style.backgroundColor = "black";
+        target.style.transform = "scale(1.05)";
+    }
+};
+
+function targetShrink (event, target) {
+    event.preventDefault;
+    target.style.backgroundColor = "";
+    target.style.transform = "";
+}
+
+export { buttonArr, targetGrow, targetShrink };

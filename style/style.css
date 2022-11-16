@@ -1,0 +1,323 @@
+/*
+Copyright 2022 Nick Falbo (https://nick.falbo.dev)
+SPDX-License-Identifier: Apache-2.0
+*/
+@charset "UTF-8";
+
+/*@import url('https://fonts.googleapis.com/css2?family=Mada:wght@400;700&family=Roboto&display=swap');*/
+
+html {
+    font-size: 125%;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0 auto;
+}
+a, p, span, input, textarea, button, label {
+    /*font-family: 'Mada', 'Roboto', sans-serif;*/
+    text-decoration: none;
+    color: black;
+}
+.button-class {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: fixed;
+    opacity: .95;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    z-index: 99;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        height: 100px;
+    }
+}
+
+.nav-logo {
+    height: 150px;
+    width: 150px;
+}
+
+@media screen and (max-width: 600px) {
+    .nav-logo {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+nav li {
+    display: inline-block;
+}
+.nav-link {
+    /*transition: .15s;*/
+    text-decoration: none;
+    cursor: pointer;
+}
+.mobile-nav-list {
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+    .mobile-nav-list {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.nav-list {
+    width: 50%;
+    padding-right: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 850px) {
+    .nav-list {
+        display: none;
+    }
+}
+
+.burger-cart-wrapper {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* position fixed allows for options to cascade from top of screen */
+    /*position: fixed;*/
+}
+
+@media screen and (max-width: 600px) {
+    .burger-cart-wrapper {
+        height: 100px;
+    }
+}
+
+.cart-wrapper {
+    height: 45px;
+    width: 45px;
+}
+
+@media screen and (max-width: 850px) {
+    .cart-wrapper {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+.cart-text {
+    fill: #FFFFFF;
+    font: normal 14px/1.4em sans-serif;
+    display: block;
+    white-space: nowrap;
+    font-size: 50px !important;
+    transform-origin: 0px 0px;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    background-color: white;
+    border: 0;
+    user-select: none;
+}
+
+@media screen and (max-width: 850px) {
+    .hamburger {
+        display: flex;
+    }
+}
+
+.x-span, .middle-span {
+    width: 40px;
+    height: 5px;
+    border-radius: 4px;
+    display: block;
+    background-color: black;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+/* ^ End of Navbar */
+/* Home Section */
+
+.home-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 700px;
+    width: 100%;
+    background-image: url("./images/bluegill.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.home-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    background-color: black;
+    padding: 1%;
+    margin-top: 10%;
+    opacity: .75;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .home-text-wrapper {
+        margin: 5%;
+    }
+}
+
+h1 {
+    font-weight: normal;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 150%;
+    }
+}
+
+h1 span {
+    /*background-color: black;*/
+    color: white;
+}
+.shop-button {
+    margin-top: 5%;
+    position: relative;
+    z-index: 5;
+    height: 50px;
+    width: 100px;
+    border-radius: 15px;
+    border-width: 0px;
+    background-color: rgb(130, 130, 130);
+    /*background-color: black;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: medium;
+    color: white;
+    opacity: .9;
+}
+
+@media screen and (max-width: 600px) {
+    .shop-button {
+        margin-top: 20%;
+    }
+}
+
+/* Main Body */
+.main-body-wrapper {
+    margin: 2%;
+    /*background-color: lightgrey;*/
+    background-color: white;
+}
+/* About Section */
+.about-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.about-img-wrapper {
+    position: sticky;
+    top: 5em;
+    margin: 0 auto;
+    margin-left: -1%;
+    height: 400px;
+    width: 300px;
+    background-image: url("./images/prioli-angry.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: circle(40% at 158px 190px);
+}
+/* Shop Section */
+.product-asile-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product-item {
+    /*height: 800px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: space-around;*/
+    margin: 1%;
+}
+
+@media screen and (max-width: 600px) {
+    .product-item {
+        margin: 3%;
+    }
+}
+
+.item-img {
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+}
+.item-input {
+    width: 15%;
+}
+.add-item-button, .email-button { 
+    height: 50px;
+    width: 150px;
+    /*margin: 1% 0;*/
+    border-radius: 15px;
+    /*font-size: inherit;
+    font-weight: bold;*/
+    /*font-family: 'Roboto', 'Mada', sans-serif;*/
+    font-size: medium;
+    background-color: rgb(130, 130, 130);
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1% 0;
+    background-color: black;
+}
+footer span, footer a {
+    color: #FFFFFF;
+}
