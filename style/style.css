@@ -77,6 +77,12 @@ nav li {
     }
 }
 
+.social-nav-wrapper {
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .nav-list {
     width: 50%;
     padding-right: 20%;
