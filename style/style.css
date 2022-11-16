@@ -241,17 +241,21 @@ h1 span {
     background-color: white;
 }
 /* About Section */
-.about-container {
+.about-wrapper h2 {
+    margin-block-end: 0em;
+}
+.about-wrapper h3 {
+    margin-block-end: -1.5em;
+    margin-block-start: .25em;
+}
+.about-content {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .about-img-wrapper {
-    position: sticky;
     top: 5em;
-    margin: 0 auto;
-    margin-left: -1%;
     height: 400px;
     width: 300px;
     background-image: url("./images/prioli-angry.jpeg");
@@ -259,6 +263,9 @@ h1 span {
     background-repeat: no-repeat;
     background-position: center;
     clip-path: circle(40% at 158px 190px);
+}
+.about-text {
+    margin-block-start: -3.5em;
 }
 /* Shop Section */
 .product-asile-wrapper {
@@ -288,7 +295,11 @@ h1 span {
     border-radius: 15px;
 }
 .item-input {
-    width: 15%;
+    text-align: center;
+    height: 35px;
+    width: 50px;
+    border-radius: 15%;
+    background-color: #FFFFFF;
 }
 .add-item-button, .email-button { 
     height: 50px;
@@ -310,6 +321,102 @@ h1 span {
     color: white;
 }
 
+/* Contact Section */
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.bottom-contact-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+            
+@media screen and (max-width: 800px) {
+    .bottom-contact-wrapper {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+            
+.contact-form {
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.contact-input, .contact-message {
+    width: 75%;
+    font-size: inherit;
+    -webkit-box-shadow: 1px 1.5px black;
+    -moz-box-shadow: 1px 1.5px black;
+    -ms-box-shadow: 1px 1.5px black;
+    -o-box-shadow: 1px 1.5px black;
+    box-shadow: 1px 1.5px black;
+    background-color: rgb(235, 235, 235);
+    border: none;
+}
+.contact-input {
+    height: 35px;
+}
+.contact-message {
+    height: 150px;
+    min-height: 150px;
+    max-width: 75%;
+    min-width: 75%;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-input, .contact-message {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+.contact-label {
+    opacity: 0;
+    color: white;
+    font-size: xx-small;
+}
+.social-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+            
+@media screen and (max-width: 800px) {
+    .social-wrapper {
+        width: 90%;    
+    }
+}
+
+.social-icon-wrapper {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contact-img {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    margin-top: 10%;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-img {
+        margin-top: 5%;
+    }
+}
+
+
 /* Footer */
 footer {
     display: flex;
@@ -320,4 +427,7 @@ footer {
 }
 footer span, footer a {
     color: #FFFFFF;
+}
+footer a {
+    text-decoration: underline;
 }

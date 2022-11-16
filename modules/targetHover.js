@@ -16,7 +16,8 @@ const buttonArr = document.querySelectorAll('.button-class');
 // Exported Functions
 function targetGrow (event, target) {
     event.preventDefault;
-    if (target.id === "cart") {
+    if (target.id === "cart" || target.id === "instagram" || target.id === "facebook") {
+        target.style.opacity = "0.65";
         target.style.transform = "scale(1.05)";
     } else {
         target.style.backgroundColor = "black";
@@ -26,6 +27,7 @@ function targetGrow (event, target) {
 
 function targetShrink (event, target) {
     event.preventDefault;
+    target.style.opacity = "";
     target.style.backgroundColor = "";
     target.style.transform = "";
 }

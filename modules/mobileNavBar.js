@@ -18,6 +18,7 @@ const topSpan = document.getElementById('top-span');
 const middleSpan = document.getElementById('middle-span');
 const bottomSpan = document.getElementById('bottom-span');
 const mobileNavList = document.getElementById('mobile-nav-list');
+const sectionArr = document.querySelectorAll('.section-class');
 ////////////////////
 // Global Variables
 const hamburger = document.getElementById('hamburger');
@@ -25,10 +26,31 @@ const navZero = document.getElementById('nav0');
 const navOne = document.getElementById('nav1');
 const navTwo = document.getElementById('nav2');
 const navThree = document.getElementById('nav3');
-let navObject = {hamburgerClicked: false, navButtonClicked: false, largeHeight: true};
+let navObject = {hamburgerClicked: false, navButtonClicked: false, largeHeight: true, isScrolling: true};
+const navLinkArr = document.querySelectorAll('.nav-link');
 
 /////////////////////////
 // Local Functions
+const setSectionPadding = (event) => {
+    event.preventDefault();
+    let width = window.innerWidth;
+    if (navObject.isScrolling) {
+        sectionArr.forEach(function(target) {
+            target.style.paddingTop = "";
+        });
+    } else {
+        if (width >= 600) {
+            sectionArr.forEach(function(target) {
+                target.style.paddingTop = "150px";
+            });
+        } else {
+            sectionArr.forEach(function(target) {
+                target.style.paddingTop = "100px";
+            });
+        }
+    }
+}
+
 const delayedAnimation = () => {
     if (navObject.hamburgerClicked) {
         // Drop down navbar extension
@@ -120,4 +142,4 @@ function burgerSpin() {
 
 ////////////////////////
 // Exports
-export { hamburger, navZero, navOne, navTwo, navThree, navObject, navHeightSet, burgerSpin };
+export { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, setSectionPadding, navHeightSet, burgerSpin };

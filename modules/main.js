@@ -13,20 +13,24 @@ Copyright 2022 Nick Falbo
 
 ////////////////
 // Imports
-import { hamburger, navZero, navOne, navTwo, navThree, navObject, navHeightSet, burgerSpin } from "./mobileNavBar.js";
+import { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
 import { setHomeSize } from "./homeDisplay.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
+// **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
+//import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
 
 // WINDOW EVENTS ///////////////////////////
 
 window.addEventListener ('load', (event) => {
     event.preventDefault();
     navHeightSet();
+    //setSectionPadding();
     setHomeSize();
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
     navHeightSet();
+    //setSectionPadding();
     setHomeSize();
 });
 
@@ -75,6 +79,14 @@ buttonArr.forEach(function(target) {
         targetShrink(event, target);
     });
 });
+// **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
+/*
+ariaHiddenArr.forEach(function(target) {
+    target.addEventListener('click', (event) => {
+        setAriaHidden(event, target);
+    });
+});
+*/
 
 
 
@@ -87,4 +99,15 @@ emailButton.addEventListener('pointerleave', (event) => {
     targetShrink(event, emailButton);
 });*/
 
-
+/*
+navLinkArr.forEach(function(target) {
+    target.addEventListener('click', (event) => {
+        navObject.isScrolling = false;
+        setSectionPadding(event);
+    });
+});
+window.addEventListener('scroll', (event) => {
+    navObject.isScrolling = true;
+    setSectionPadding(event);
+});
+*/
