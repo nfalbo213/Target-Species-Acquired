@@ -392,17 +392,16 @@ h1 span {
             
 @media screen and (max-width: 800px) {
     .social-wrapper {
-        width: 90%;    
+        width: 90%;
+        margin: 3% 0;   
     }
 }
-
 .social-icon-wrapper {
     width: 35%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
 .contact-img {
     height: 50%;
     width: 50%;
@@ -415,7 +414,6 @@ h1 span {
         margin-top: 5%;
     }
 }
-
 
 /* Footer */
 footer {
