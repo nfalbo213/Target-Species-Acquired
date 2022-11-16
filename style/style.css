@@ -296,10 +296,11 @@ h1 span {
 }
 .item-input {
     text-align: center;
-    height: 35px;
-    width: 50px;
+    height: 45px;
+    width: 60px;
     border-radius: 15%;
     background-color: #FFFFFF;
+    color: black;
 }
 .add-item-button, .email-button { 
     height: 50px;
