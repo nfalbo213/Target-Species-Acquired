@@ -13,12 +13,8 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 
 ////////////////
 // Imports
-import { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
-import { setHomeSize } from "./homeDisplay.js";
+import { hamburger, navZero, navOne, navTwo, navThree, navObject, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
-import { form, handleSubmit } from "./contact.js";
-// **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
-//import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
 
 // WINDOW EVENTS ///////////////////////////
 
@@ -26,13 +22,11 @@ window.addEventListener ('load', (event) => {
     event.preventDefault();
     navHeightSet();
     setSectionPadding(event);
-    setHomeSize();
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
     navHeightSet();
     setSectionPadding(event);
-    setHomeSize();
 });
 
 // MOBILE NAVBAR /////////////////////////
@@ -47,25 +41,25 @@ navZero.onpointerup = (event) => {
     event.preventDefault();
     navObject.navButtonClicked = true;
     burgerSpin();
-    window.location.replace("#home");
+    window.location.replace("./index.html#home");
 }
 navOne.onpointerup = (event) => {
     event.preventDefault();
     navObject.navButtonClicked = true;
     burgerSpin();
-    window.location.replace("#shop");
+    window.location.replace("./index.html#shop");
 }
 navTwo.onpointerup = (event) => {
     event.preventDefault();
     navObject.navButtonClicked = true;
     burgerSpin();
-    window.location.replace("#about");
+    window.location.replace("./index.html#about");
 }
 navThree.onpointerup = (event) => {
     event.preventDefault();
     navObject.navButtonClicked = true;
     burgerSpin();
-    window.location.replace("#contact");
+    window.location.replace("./index.html#contact");
 }
 
 // BUTTONS /////////////////////////
@@ -80,36 +74,3 @@ buttonArr.forEach(function(target) {
         targetShrink(event, target);
     });
 });
-// **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
-/*
-ariaHiddenArr.forEach(function(target) {
-    target.addEventListener('click', (event) => {
-        setAriaHidden(event, target);
-    });
-});
-*/
-
-// CONTACT FORM ///////////////////////////
-
-form.addEventListener('submit', handleSubmit);
-
-// Testing
-/*emailButton.addEventListener('pointerover', (event) => {
-    targetGrow(event, emailButton);
-});
-emailButton.addEventListener('pointerleave', (event) => {
-    targetShrink(event, emailButton);
-});*/
-
-/*
-navLinkArr.forEach(function(target) {
-    target.addEventListener('click', (event) => {
-        navObject.isScrolling = false;
-        setSectionPadding(event);
-    });
-});
-window.addEventListener('scroll', (event) => {
-    navObject.isScrolling = true;
-    setSectionPadding(event);
-});
-*/

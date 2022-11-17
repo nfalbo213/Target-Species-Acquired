@@ -5,8 +5,8 @@ SPDX-License-Identifier: Apache-2.0
 
 // HTML Variables
 const targetUrl = 'https://formspree.io/f/';
-const key = 'mgeqobag';
 const form = document.getElementById("contact-form");
+const key = form.dataset.uid;
 const formStatus = document.getElementById("form-status");
 
 // Async Functions
