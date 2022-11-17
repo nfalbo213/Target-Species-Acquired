@@ -88,6 +88,8 @@ ariaHiddenArr.forEach(function(target) {
 });
 */
 
+// FOOTER ///////////////////////////////
+document.getElementById("footer-year").innerHTML = new Date().getFullYear();
 
 
 
