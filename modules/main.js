@@ -16,6 +16,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 import { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
 import { setHomeSize } from "./homeDisplay.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
+import { form, handleSubmit } from "./contact.js";
 // **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
 //import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
 
@@ -88,7 +89,9 @@ ariaHiddenArr.forEach(function(target) {
 });
 */
 
+// CONTACT FORM ///////////////////////////
 
+form.addEventListener('submit', handleSubmit);
 
 // Testing
 /*emailButton.addEventListener('pointerover', (event) => {
