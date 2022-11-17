@@ -174,8 +174,6 @@ nav li {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 700px;
-    width: 100%;
     background-image: url("./images/bluegill.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -432,6 +430,13 @@ footer {
     padding: 1% 0;
     background-color: black;
 }
+
+@media screen and (max-width: 800px) {
+    footer {
+        padding: 3% 0;
+    }
+}
+
 footer span, footer a {
     color: #FFFFFF;
 }
