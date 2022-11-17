@@ -183,6 +183,39 @@ nav li {
 }
 /* ^ End of Navbar */
 
+/* main */
+.main-container {
+    margin: 2%;
+    background-color: #FFFFFF;
+}
+.checkout-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width: 850px) {
+    .checkout-item-wrapper {
+        flex-direction: column;
+    }
+}
+
+
+.border-span {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    border-radius: 15%;
+    display: block;
+}
+
+@media screen and (max-width: 850px) {
+    .desktop-border {
+        display: none;
+    }
+}
+
 /* Footer */
 footer {
     display: flex;
