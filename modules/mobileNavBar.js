@@ -34,6 +34,8 @@ const navLinkArr = document.querySelectorAll('.nav-link');
 const setSectionPadding = (event) => {
     event.preventDefault();
     let width = window.innerWidth;
+    // Only use this section if decide to bring back scrolling portion (likely will not)
+    /*
     if (navObject.isScrolling) {
         sectionArr.forEach(function(target) {
             target.style.paddingTop = "";
@@ -48,6 +50,16 @@ const setSectionPadding = (event) => {
                 target.style.paddingTop = "100px";
             });
         }
+    }
+    */
+    if (width > 600) {
+        sectionArr.forEach(function(target) {
+            target.style.paddingTop = "150px";
+        });
+    } else {
+        sectionArr.forEach(function(target) {
+            target.style.paddingTop = "100px";
+        });
     }
 }
 

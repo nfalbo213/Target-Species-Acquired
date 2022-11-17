@@ -24,13 +24,13 @@ import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 window.addEventListener ('load', (event) => {
     event.preventDefault();
     navHeightSet();
-    //setSectionPadding();
+    setSectionPadding(event);
     setHomeSize();
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
     navHeightSet();
-    //setSectionPadding();
+    //setSectionPadding(event);
     setHomeSize();
 });
 
@@ -87,9 +87,6 @@ ariaHiddenArr.forEach(function(target) {
     });
 });
 */
-
-// FOOTER ///////////////////////////////
-document.getElementById("footer-year").innerHTML = new Date().getFullYear();
 
 
 
