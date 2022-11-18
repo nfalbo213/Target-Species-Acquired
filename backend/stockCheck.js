@@ -12,10 +12,44 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 */
 
 const itemArr = document.querySelectorAll('.inventory');
+const optionArr = document.querySelectorAll('.item-input');
 
 const url = "./backend/warehouse.json";
 //let rawJson = {};
 
+const renderOptions = (target, value) => {
+  let i = value;
+  let num = 1
+  do {
+    const opt = document.createElement("option");
+    opt.value = `${num}`;
+    opt.text = `${num}`;
+    //opt.value = `${i}`;
+    //opt.text = `${i}`;
+    target.add(opt, target.options[0]);
+    num++
+    //i--
+  } while (num <= i);
+  //} while (i > 0)
+
+  /*const qty = document.createElement("option");
+  qty.value = `null`;
+  qty.text = `Qty`;
+  target.add(opt, target.options[0]);*/
+
+
+}
+
+const setOptions = (key, value) => {
+  //console.log(`happened`);
+  optionArr.forEach(function(target) {
+    if (target.dataset.prod === key && value > 0) {
+      renderOptions(target, value);
+      console.log(`happened`);
+    }
+  });
+
+};
 
 const setInventory = (key, value) => {
 // accepts a key it's value (from rawJson)
@@ -42,21 +76,27 @@ const renderJsonResponse = (res) => {
       //console.log(key);
       if (key === "bluegill") {
         setInventory(key, rawJson.bluegill);
+        setOptions(key, rawJson.bluegill);
       }
       if (key === "bluegillSquare") {
         setInventory(key, rawJson.bluegillSquare);
+        setOptions(key, rawJson.bluegillSquare);
       }
       if (key === "fireCraw") {
         setInventory(key, rawJson.fireCraw);
+        setOptions(key, rawJson.fireCraw);
       }
       if (key === "goldenShad") {
         setInventory(key, rawJson.goldenShad);
+        setOptions(key, rawJson.goldenShad);
       }
       if (key === "pickleback") {
         setInventory(key, rawJson.pickleback);
+        setOptions(key, rawJson.pickleback);
       }
       if (key === "rainbowTroutSwim") {
         setInventory(key, rawJson.rainbowTroutSwim);
+        setOptions(key, rawJson.rainbowTroutSwim);
       }
     }
 };
