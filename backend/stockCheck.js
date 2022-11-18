@@ -20,7 +20,7 @@ const url = "./backend/warehouse.json";
 const setItemButtons = (key, value) => {
   itmbttnArr.forEach(function(target) {
     if (target.dataset.prod === key && value < 1) {
-      //target.href = './#contact';
+      target.href = './#contact';
       // need to append with an <a> for href
       target.innerHTML = 'Special Order';
     }
