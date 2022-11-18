@@ -113,3 +113,9 @@ window.addEventListener('scroll', (event) => {
     setSectionPadding(event);
 });
 */
+
+import { checkInventory } from "../backend/stockCheck.js";
+
+checkInventory();
+//console.log(rawJson);
+//console.log(rawJson);

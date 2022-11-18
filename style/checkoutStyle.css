@@ -25,10 +25,11 @@ a, p, span, input, textarea, button, label {
     transition: .15s ease-in-out;
 }
 .social-icon-wrapper {
-    width: 35%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 3%;
 }
 /* Navbar */
 .navbar {
