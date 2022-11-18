@@ -13,9 +13,19 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 
 const itemArr = document.querySelectorAll('.inventory');
 const optionArr = document.querySelectorAll('.item-input');
+const itmbttnArr = document.querySelectorAll('.add-item-button')
 
 const url = "./backend/warehouse.json";
-//let rawJson = {};
+
+const setItemButtons = (key, value) => {
+  itmbttnArr.forEach(function(target) {
+    if (target.dataset.prod === key && value < 1) {
+      //target.href = './#contact';
+      // need to append with an <a> for href
+      target.innerHTML = 'Special Order';
+    }
+  });
+};
 
 const renderOptions = (target, value) => {
   let i = value;
@@ -26,7 +36,7 @@ const renderOptions = (target, value) => {
     opt.text = `${num}`;
     //opt.value = `${i}`;
     //opt.text = `${i}`;
-    target.add(opt, target.options[0]);
+    target.add(opt, target.options[num]);
     num++
     //i--
   } while (num <= i);
@@ -45,7 +55,6 @@ const setOptions = (key, value) => {
   optionArr.forEach(function(target) {
     if (target.dataset.prod === key && value > 0) {
       renderOptions(target, value);
-      console.log(`happened`);
     }
   });
 
@@ -77,26 +86,32 @@ const renderJsonResponse = (res) => {
       if (key === "bluegill") {
         setInventory(key, rawJson.bluegill);
         setOptions(key, rawJson.bluegill);
+        setItemButtons(key, rawJson.bluegill);
       }
       if (key === "bluegillSquare") {
         setInventory(key, rawJson.bluegillSquare);
         setOptions(key, rawJson.bluegillSquare);
+        setItemButtons(key, rawJson.bluegillSquare);
       }
       if (key === "fireCraw") {
         setInventory(key, rawJson.fireCraw);
         setOptions(key, rawJson.fireCraw);
+        setItemButtons(key, rawJson.fireCraw);
       }
       if (key === "goldenShad") {
         setInventory(key, rawJson.goldenShad);
         setOptions(key, rawJson.goldenShad);
+        setItemButtons(key, rawJson.goldenShad);
       }
       if (key === "pickleback") {
         setInventory(key, rawJson.pickleback);
         setOptions(key, rawJson.pickleback);
+        setItemButtons(key, rawJson.pickleback);
       }
       if (key === "rainbowTroutSwim") {
         setInventory(key, rawJson.rainbowTroutSwim);
         setOptions(key, rawJson.rainbowTroutSwim);
+        setItemButtons(key, rawJson.rainbowTroutSwim);
       }
     }
 };

@@ -294,11 +294,13 @@ h1 span {
     align-items: center;
     /*justify-content: space-around;*/
     margin: 1%;
+    width: 35%;
 }
 
 @media screen and (max-width: 600px) {
     .product-item {
         margin: 3%;
+        width: 100%;
     }
 }
 
