@@ -32,7 +32,10 @@ window.addEventListener ('resize', (event) => {
     event.preventDefault();
     navHeightSet();
     setSectionPadding(event);
-    setHomeSize();
+    let width = window.width
+    if(width > 600) {
+        setHomeSize();
+    }
 });
 
 // MOBILE NAVBAR /////////////////////////
