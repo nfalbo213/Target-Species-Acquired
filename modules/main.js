@@ -32,7 +32,7 @@ window.addEventListener ('resize', (event) => {
     event.preventDefault();
     navHeightSet();
     setSectionPadding(event);
-    let width = window.width
+    let width = window.innerWidth;
     if(width > 600) {
         setHomeSize();
     }
