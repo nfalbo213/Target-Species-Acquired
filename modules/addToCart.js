@@ -50,6 +50,7 @@ const setCart = () => {
     })
     console.log('did not happen');
     */
+   
     if (localStorage.getItem("bluegill")) {
         let bluegill = localStorage.getItem( "bluegill" );
         const cartObj = JSON.parse(bluegill);
@@ -124,9 +125,14 @@ function buttonMessage(target) {
 
 itmbttnArr.forEach(function(target) {
     target.addEventListener('click', (event) => {
-        itemToCart(event, target);
-        buttonMessage(target);
-        alert('Cart Updated!');
+        if (target.class === 'out-of-stock') {
+            event.preventDefault();
+            window.location.replace("#contact");
+        } else {
+            itemToCart(event, target);
+            buttonMessage(target);
+            alert('Cart Updated!');
+        }
     });
 });
 

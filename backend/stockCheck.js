@@ -23,6 +23,7 @@ const setItemButtons = (key, value) => {
   itmbttnArr.forEach(function(target) {
     if (target.dataset.prod === key && value < 1) {
       target.href = './#contact';
+      target.class = 'out-of-stock'
       target.innerHTML = 'Special Order';
     }
   });
