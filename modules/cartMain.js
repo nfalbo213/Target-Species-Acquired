@@ -15,6 +15,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 // Imports
 import { hamburger, navZero, navOne, navTwo, navThree, navObject, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
+import { checkInventory } from "../backend/stockCheck.js";
 
 // WINDOW EVENTS ///////////////////////////
 
@@ -74,3 +75,5 @@ buttonArr.forEach(function(target) {
         targetShrink(event, target);
     });
 });
+
+checkInventory();

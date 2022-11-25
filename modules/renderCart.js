@@ -11,47 +11,43 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
    limitations under the License.
 */
 
-import { findCartAmount } from "./addToCart.js";
-import { itemDisplayArr } from "./renderCart.js";
+const itemDisplayArr = document.querySelectorAll('.product-item');
 
-const clearButton = document.querySelectorAll('.clear-button');
+/*
+const bluegill = document.getElementById('bluegill');
+const bluegillSquare = document.getElementById('bluegill-squarebill');
+const bluegill = document.getElementById('bluegill');
+*/
 
-
-function clearCart(event) {
-
-    event.preventDefault();
-    //localStorage.clear();
-   
+const checkLocalStorage = () => {
     if (localStorage.getItem("bluegill")) {
-        localStorage.removeItem("bluegill");
+        renderItems("bluegill");
     }
     if (localStorage.getItem("bluegillSquare")) {
-        localStorage.removeItem("bluegillSquare");
+        renderItems("bluegillSquare");
     }
     if (localStorage.getItem("fireCraw")) {
-        localStorage.removeItem("fireCraw");
+        renderItems("fireCraw");
     }
     if (localStorage.getItem("goldenShad")) {
-        localStorage.removeItem("goldenShad");
+        renderItems("goldenShad");
     }
     if (localStorage.getItem("pickleback")) {
-        localStorage.removeItem("pickleback");
+        renderItems("pickleback");
     }
     if (localStorage.getItem("rainbowTroutSwim")) {
-        localStorage.removeItem("rainbowTroutSwim");
+        renderItems("rainbowTroutSwim");
     }
-    
-    // Set number in Cart icon
-    findCartAmount();
-    // Render items in cart page
-    itemDisplayArr.forEach(target => {
-        target.style.display = 'none';
-    });
-}
+};
 
-clearButton.forEach(target => {
-    target.addEventListener('click', (event) => {
-        clearCart(event);
-        alert('Cart Updated!');
+const renderItems = (string) => {
+    itemDisplayArr.forEach(target => {
+        if (target.dataset.prod === string) {
+            target.style.display = 'flex';
+        }
     });
-});
+};
+
+checkLocalStorage();
+
+export { itemDisplayArr };
