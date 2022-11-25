@@ -36,55 +36,15 @@ const findCartAmount = () => {
 }
 
 const setCart = () => {
-
-    /*
-    console.log(itemName);
-    console.log(`${itemName}`);
     optionArr.forEach(target => {
-        if (target.dataset.prod === `${itemName}`) {
-            let obj = localStorage.getItem( `${itemName}` );
+        if (localStorage.getItem(`${target.dataset.prod}`)) {
+            let obj = localStorage.getItem(`${target.dataset.prod}`);
             const cartObj = JSON.parse(obj);
             cartArr.push(cartObj);
-            console.log('happened');
-        }
-    })
-    console.log('did not happen');
-    */
-   
-    if (localStorage.getItem("bluegill")) {
-        let bluegill = localStorage.getItem( "bluegill" );
-        const cartObj = JSON.parse(bluegill);
-        cartArr.push(cartObj);
-    }
-    if (localStorage.getItem("bluegillSquare")) {
-        let bluegillSquare = localStorage.getItem( "bluegillSquare" );
-        const cartObj = JSON.parse(bluegillSquare);
-        cartArr.push(cartObj);
-    }
-    if (localStorage.getItem("fireCraw")) {
-        let fireCraw = localStorage.getItem( "fireCraw" );
-        const cartObj = JSON.parse(fireCraw);
-        cartArr.push(cartObj);
-    }
-    if (localStorage.getItem("goldenShad")) {
-        let goldenShad = localStorage.getItem( "goldenShad" );
-        const cartObj = JSON.parse(goldenShad);
-        cartArr.push(cartObj);
-    }
-    if (localStorage.getItem("pickleback")) {
-        let pickleback = localStorage.getItem( "pickleback" );
-        const cartObj = JSON.parse(pickleback);
-        cartArr.push(cartObj);
-    }
-    if (localStorage.getItem("rainbowTroutSwim")) {
-        let rainbowTroutSwim = localStorage.getItem( "rainbowTroutSwim" );
-        const cartObj = JSON.parse(rainbowTroutSwim);
-        cartArr.push(cartObj);
-    }
-    
-
-    findCartAmount();
-    
+        };
+    });
+    // Set number in Cart icon
+    findCartAmount();   
 }
 
 

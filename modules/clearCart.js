@@ -21,33 +21,15 @@ function clearCart(event) {
 
     event.preventDefault();
     //localStorage.clear();
-   
-    if (localStorage.getItem("bluegill")) {
-        localStorage.removeItem("bluegill");
-    }
-    if (localStorage.getItem("bluegillSquare")) {
-        localStorage.removeItem("bluegillSquare");
-    }
-    if (localStorage.getItem("fireCraw")) {
-        localStorage.removeItem("fireCraw");
-    }
-    if (localStorage.getItem("goldenShad")) {
-        localStorage.removeItem("goldenShad");
-    }
-    if (localStorage.getItem("pickleback")) {
-        localStorage.removeItem("pickleback");
-    }
-    if (localStorage.getItem("rainbowTroutSwim")) {
-        localStorage.removeItem("rainbowTroutSwim");
-    }
-    
+    itemDisplayArr.forEach(target => {
+        if (localStorage.getItem(`${target.dataset.prod}`)) {
+            localStorage.removeItem(`${target.dataset.prod}`);
+            target.style.display = 'none';
+        }
+    })
     // Set number in Cart icon
     findCartAmount();
-    // Render items in cart page
-    itemDisplayArr.forEach(target => {
-        target.style.display = 'none';
-    });
-}
+};
 
 clearButton.forEach(target => {
     target.addEventListener('click', (event) => {

@@ -22,7 +22,7 @@ const url = "./backend/warehouse.json";
 const setItemButtons = (key, value) => {
   itmbttnArr.forEach(function(target) {
     if (target.dataset.prod === key && value < 1) {
-      target.href = './#contact';
+      //target.href = './#contact';
       target.class = 'out-of-stock'
       target.innerHTML = 'Special Order';
     }
@@ -116,6 +116,17 @@ const renderJsonResponse = (res) => {
         setOptions(key, rawJson.rainbowTroutSwim);
         setItemButtons(key, rawJson.rainbowTroutSwim);
       }
+      /*
+      itemArr.forEach(target => {
+        if (key === `${target.dataset.prod}`) {
+          let string = target.dataset.prod;
+          //console.log(string);
+          setInventory(key, rawJson.string);
+          setOptions(key, rawJson.string);
+          setItemButtons(key, rawJson.string);
+        }
+      })
+      */
     }
 };
 

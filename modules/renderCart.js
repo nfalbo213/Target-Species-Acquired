@@ -20,24 +20,11 @@ const bluegill = document.getElementById('bluegill');
 */
 
 const checkLocalStorage = () => {
-    if (localStorage.getItem("bluegill")) {
-        renderItems("bluegill");
-    }
-    if (localStorage.getItem("bluegillSquare")) {
-        renderItems("bluegillSquare");
-    }
-    if (localStorage.getItem("fireCraw")) {
-        renderItems("fireCraw");
-    }
-    if (localStorage.getItem("goldenShad")) {
-        renderItems("goldenShad");
-    }
-    if (localStorage.getItem("pickleback")) {
-        renderItems("pickleback");
-    }
-    if (localStorage.getItem("rainbowTroutSwim")) {
-        renderItems("rainbowTroutSwim");
-    }
+    itemDisplayArr.forEach(target => {
+        if (localStorage.getItem(`${target.dataset.prod}`)) {
+            renderItems(`${target.dataset.prod}`);
+        };
+    });
 };
 
 const renderItems = (string) => {
