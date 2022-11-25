@@ -15,7 +15,7 @@ SPDX-License-Identifier: Apache-2.0
         <link rel="apple-touch-icon" sizes="180x180" href="./style/images/favicon/apple-touch-icon.png ">
         <link rel="shrotcut icon" type="image/png" sizes="32x32" href="./style/images/favicon/favicon-32x32.png">
         <link rel="shortcut icon" type="image/png" sizes="16x16" href="./style/images/favicon/favicon-16x16.png">
-        <link rel="manifest" href="./style/images/favicon/site.webmanifest.json">
+        <link rel="manifest" href="./style/images/favicon/site.webmanifest">
         <link rel="stylesheet" type="text/css" href="./style/style.css">
     </head>
 
@@ -94,7 +94,7 @@ SPDX-License-Identifier: Apache-2.0
                                 <svg id="cart" class="button-class"  xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="5.7 0 105.5 126.1" preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-1">
                                     <path d="M99.8 28.4c0-1.2-0.9-2-2.1-2h-15c0 3.2 0 7.6 0 8.2 0 1.5-1.2 2.6-2.6 2.9 -1.5 0.3-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-0.9 0-4.7 0-8.2H40.1c0 3.2 0 7.3 0 8.2 0 1.5-1.2 2.9-2.6 2.9 -1.5 0-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-0.6 0-5 0-8.2h-15c-1.2 0-2 0.9-2 2L8.3 124c0 1.2 0.9 2.1 2.1 2.1h96.3c1.2 0 2.1-0.9 2.1-2.1L99.8 28.4z"></path>
                                     <path d="M59.1 5.9c-2.9 0-2 0-2.9 0 -2 0-4.4 0.6-6.4 1.5 -3.2 1.5-5.9 4.1-7.6 7.3 -0.9 1.8-1.5 3.5-1.8 5.6 0 0.9-0.3 1.5-0.3 2.3 0 1.2 0 2.1 0 3.2 0 1.5-1.2 2.9-2.6 2.9 -1.5 0-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-1.2 0-2.3 0-3.5 0-3.2 0.9-6.4 2-9.4 1.2-2.3 2.6-4.7 4.7-6.4 3.2-2.9 6.7-5 11.1-5.9C53.5 0.3 55 0 56.7 0c1.5 0 2.9 0 4.4 0 2.9 0 5.6 0.6 7.9 1.8 2.6 1.2 5 2.6 6.7 4.4 3.2 3.2 5.3 6.7 6.4 11.1 0.3 1.5 0.6 3.2 0.6 4.7 0 1.2 0 2.3 0 3.2 0 1.5-1.2 2.6-2.6 2.9s-2.9-0.9-3.2-2.3c0-0.3 0-0.3 0-0.6 0-1.2 0-2.6 0-3.8 0-2.3-0.6-4.4-1.8-6.4 -1.5-3.2-4.1-5.9-7.3-7.3 -1.8-0.9-3.5-1.8-5.9-1.8C61.1 5.9 59.1 5.9 59.1 5.9L59.1 5.9z"></path>
-                                    <text class="cart-text" x="58.5" y="77" dy=".35em" text-anchor="middle" data-hook="items-count">0</text>
+                                    <text id="cart-text" class="cart-text" x="58.5" y="77" dy=".35em" text-anchor="middle" data-hook="items-count">0</text>
                                 </svg>
                             </a>
                         </div>
@@ -270,9 +270,6 @@ SPDX-License-Identifier: Apache-2.0
                                     <!-- Option elements added by stockCheck.js -->
                                 </select>
                             </label>
-
-                                <!--<label label="Qty" class="SelectLabel-sc-2gn238-0 sLSIU"><select label="Qty" class="SelectElement-sc-pngmnv-0 YPiSP"><option value="1">1</option><option value="2">2</option></select><button type="button" aria-hidden="true" tabindex="-1" class="BaseButton-sc-j0jbcc-0 ButtonSecondary-sc-asfk23-0 dIJYmd rIJpU SelectBox__SelectButtonWithValidation-sc-1bl0vec-5 LamBc DefaultDisplayLabel__DefaultDisplayLabel1-sc-1erpsb0-4 epfuhm"><div class="styles__StyledRow-sc-wmoju4-0 bZDBNs select--customLabel"><span class="DefaultDisplayLabel__StyledText-sc-1erpsb0-2 eUWa-DH"><span class="DefaultDisplayLabel__LabelSpan-sc-1erpsb0-0 dVhoPa">Qty</span><div class="styles__StyledQuantityValue-sc-aajqid-3 kpRxpq">1</div></span><span class="DefaultDisplayLabel__StyledIcon-sc-1erpsb0-3 kbJKxd"><svg height="14" viewBox="0 0 23 23" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12.002 15.38l9.589-9.588 1.414 1.414-11.003 11.002L1 7.206l1.414-1.414z" fill="#888"></path></svg></span></div></button></label>-->
-
                             <!-- Price/ea (possibly make price change depending on number input)-->
                             <a id="" class="">$15.00/ea</a>
                             <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="goldenShad">
@@ -312,25 +309,26 @@ SPDX-License-Identifier: Apache-2.0
                                 </select>
                             </label>
                             <!-- Price/ea (possibly make price change depending on number input)-->
-                            <a id="" class="">$15.00/ea</a>
+                            <a id="" class="">$12.00/ea</a>
                             <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="rainbowTroutSwim">
                                 Add to Cart
                             </a>
                         </div>
 
+                        <!---
                         <div id="item6" class="product-item">
                             <img class="item-img" src="./style/images/Pickleback.jpg" alt="">
                             <h4>Pickleback Lure</h4>
                             <p>Best damn pickleback lure you'll ever use</p>
-                            <!-- List if item in stock -->
+                            <!-- List if item in stock --
                             <a id="" class="inventory" data-prod="pickleback">'x' left in stock</a>
-                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
+                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads --
                             <label label="Qty" class="">
                                 <select class="item-input" data-prod="pickleback" label="Qty" aria-hidden="true">
-                                    <!-- Option elements added by stockCheck.js -->
+                                    <!-- Option elements added by stockCheck.js --
                                 </select>
                             </label>
-                            <!-- Price/ea (possibly make price change depending on number input)-->
+                            <!-- Price/ea (possibly make price change depending on number input)--
                             <a id="" class="">$15.00/ea</a>
                             <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="pickleback">
                                 Add to Cart
@@ -341,15 +339,15 @@ SPDX-License-Identifier: Apache-2.0
                             <img class="item-img" src="./style/images/Golden-Shad.jpg" alt="">
                             <h4>Golden Shad Lure</h4>
                             <p>Best damn golden shad lure you'll ever use</p>
-                            <!-- List if item in stock -->
+                            <!-- List if item in stock --
                             <a id="" class="inventory" data-prod="goldenShad">'x' left in stock</a>
-                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
+                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads --
                             <label label="Qty" class="">
                                 <select class="item-input" data-prod="goldenShad" label="Qty" aria-hidden="true">
-                                    <!-- Option elements added by stockCheck.js -->
+                                    <!-- Option elements added by stockCheck.js --
                                 </select>
                             </label>
-                            <!-- Price/ea (possibly make price change depending on number input)-->
+                            <!-- Price/ea (possibly make price change depending on number input)--
                             <a id="" class="">$15.00/ea</a>
                             <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" role="button" aria-roledescription="button to add item to cart" data-prod="goldenShad">
                                 Add to Cart
@@ -360,15 +358,15 @@ SPDX-License-Identifier: Apache-2.0
                             <img class="item-img" src="./style/images/Pickleback.jpg" alt="">
                             <h4>Pickleback Lure</h4>
                             <p>Best damn pickleback lure you'll ever use</p>
-                            <!-- List if item in stock -->
+                            <!-- List if item in stock --
                             <a id="" class="inventory" data-prod="pickleback">'x' left in stock</a>
-                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
+                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads --
                             <label label="Qty" class="">
                                 <select class="item-input" data-prod="pickleback" label="Qty" aria-hidden="true">
-                                    <!-- Option elements added by stockCheck.js -->
+                                    <!-- Option elements added by stockCheck.js --
                                 </select>
                             </label>
-                            <!-- Price/ea (possibly make price change depending on number input)-->
+                            <!-- Price/ea (possibly make price change depending on number input)--
                             <a id="" class="">$15.00/ea</a>
                             <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="pickleback">
                                 Add to Cart
@@ -379,40 +377,63 @@ SPDX-License-Identifier: Apache-2.0
                             <img class="item-img" src="./style/images/Pickleback.jpg" alt="">
                             <h4>Pickleback Lure</h4>
                             <p>Best damn pickleback lure you'll ever use</p>
-                            <!-- List if item in stock -->
+                            <!-- List if item in stock --
                             <a id="" class="inventory" data-prod="pickleback">'x' left in stock</a>
-                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
+                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads --
                             <label label="Qty" class="">
                                 <select class="item-input" data-prod="pickleback" label="Qty" aria-hidden="true">
-                                    <!-- Option elements added by stockCheck.js -->
+                                    <!-- Option elements added by stockCheck.js --
                                 </select>
                             </label>
-                            <!-- Price/ea (possibly make price change depending on number input)-->
+                            <!-- Price/ea (possibly make price change depending on number input)--
                             <a id="" class="">$15.00/ea</a>
                             <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="pickleback">
                                 Add to Cart
                             </a>
+
+                            <!-- PayPal add to cart button (quick fix if need to go live) --
+                            <!--
+                            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                            --
+
                         </div>
 
                         <div id="item10" class="product-item">
                             <img class="item-img" src="./style/images/bluegill-squarebill.jpg" alt="">
                             <h4>Bluegill Squarebill Lure</h4>
                             <p>Best damn bluegill squarebill lure you'll ever use</p>
-                            <!-- List if item in stock -->
+                            <!-- List if item in stock --
                             <a id="" class="inventory" data-prod="bluegillSquare">'x' left in stock</a>
-                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
+                            <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads --
                             <label label="Qty" class="">
                                 <select class="item-input" data-prod="bluegillSquare" label="Qty" aria-hidden="true">
-                                    <!-- Option elements added by stockCheck.js -->
+                                    <!-- Option elements added by stockCheck.js --
                                 </select>
                             </label>
-                            <!-- Price/ea (possibly make price change depending on number input)-->
+                            <!-- Price/ea (possibly make price change depending on number input)--
                             <a id="" class="">$15.00/ea</a>
                             <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="bluegillSquare">
                                 Add to Cart
                             </a>
-                        </div>
+                        --
 
+                            <!-- PayPal add to cart button (quick fix if need to go live) --
+                          <!--  
+                            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                            -->
+
+                        </div>
+                    
                     </div>
             
                 </div>
@@ -510,6 +531,13 @@ SPDX-License-Identifier: Apache-2.0
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
         <script src="./modules/footer.js"></script>
         <script type="module" src="./modules/main.js"></script>
+
+        <!-- Test script -->
+        <script type="module" src="./modules/addToCart.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!--<script src="./backend/cartCheck.js"></script>-->
 
     </body>
 

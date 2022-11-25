@@ -15,7 +15,7 @@ SPDX-License-Identifier: Apache-2.0
         <link rel="apple-touch-icon" sizes="180x180" href="./style/images/favicon/apple-touch-icon.png ">
         <link rel="shrotcut icon" type="image/png" sizes="32x32" href="./style/images/favicon/favicon-32x32.png">
         <link rel="shortcut icon" type="image/png" sizes="16x16" href="./style/images/favicon/favicon-16x16.png">
-        <link rel="manifest" href="./style/images/favicon/site.webmanifest.json">
+        <link rel="manifest" href="./style/images/favicon/site.webmanifest">
         <link rel="stylesheet" type="text/css" href="./style/checkoutStyle.css">
     </head>
 
@@ -94,7 +94,7 @@ SPDX-License-Identifier: Apache-2.0
                                 <svg id="cart" class="button-class"  xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="5.7 0 105.5 126.1" preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-1">
                                     <path d="M99.8 28.4c0-1.2-0.9-2-2.1-2h-15c0 3.2 0 7.6 0 8.2 0 1.5-1.2 2.6-2.6 2.9 -1.5 0.3-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-0.9 0-4.7 0-8.2H40.1c0 3.2 0 7.3 0 8.2 0 1.5-1.2 2.9-2.6 2.9 -1.5 0-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-0.6 0-5 0-8.2h-15c-1.2 0-2 0.9-2 2L8.3 124c0 1.2 0.9 2.1 2.1 2.1h96.3c1.2 0 2.1-0.9 2.1-2.1L99.8 28.4z"></path>
                                     <path d="M59.1 5.9c-2.9 0-2 0-2.9 0 -2 0-4.4 0.6-6.4 1.5 -3.2 1.5-5.9 4.1-7.6 7.3 -0.9 1.8-1.5 3.5-1.8 5.6 0 0.9-0.3 1.5-0.3 2.3 0 1.2 0 2.1 0 3.2 0 1.5-1.2 2.9-2.6 2.9 -1.5 0-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-1.2 0-2.3 0-3.5 0-3.2 0.9-6.4 2-9.4 1.2-2.3 2.6-4.7 4.7-6.4 3.2-2.9 6.7-5 11.1-5.9C53.5 0.3 55 0 56.7 0c1.5 0 2.9 0 4.4 0 2.9 0 5.6 0.6 7.9 1.8 2.6 1.2 5 2.6 6.7 4.4 3.2 3.2 5.3 6.7 6.4 11.1 0.3 1.5 0.6 3.2 0.6 4.7 0 1.2 0 2.3 0 3.2 0 1.5-1.2 2.6-2.6 2.9s-2.9-0.9-3.2-2.3c0-0.3 0-0.3 0-0.6 0-1.2 0-2.6 0-3.8 0-2.3-0.6-4.4-1.8-6.4 -1.5-3.2-4.1-5.9-7.3-7.3 -1.8-0.9-3.5-1.8-5.9-1.8C61.1 5.9 59.1 5.9 59.1 5.9L59.1 5.9z"></path>
-                                    <text class="cart-text" x="58.5" y="77" dy=".35em" text-anchor="middle" data-hook="items-count">0</text>
+                                    <text id="cart-text" class="cart-text" x="58.5" y="77" dy=".35em" text-anchor="middle" data-hook="items-count">0</text>
                                 </svg>
                             </a>
                         </div>
@@ -123,6 +123,9 @@ SPDX-License-Identifier: Apache-2.0
                 <div class="checkout-items">
                     <span class="border-span"></span>
                     <h2>items</h2>
+                    <a id="clear-button" class="clear-button button-class" role="button" aria-roledescription="clear items from cart">
+                      Clear Cart
+                  </a>
                     <span class="border-span desktop-border"></span>
                 </div>
                 <div class="order-summary">
@@ -131,6 +134,187 @@ SPDX-License-Identifier: Apache-2.0
                     <span class="border-span"></span>
                 </div>
             </div>
+
+            <!-- **PAYPAL INTERGRATION BELOW** -->
+<!---
+            <div id="paypal-button-container"></div>
+        <!-- Sample PayPal credentials (client-id) are included --
+        <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD&intent=capture&enable-funding=venmo" data-sdk-integration-source="integrationbuilder"></script>
+
+        <script>
+          const fundingSources = [
+            paypal.FUNDING.PAYPAL,
+              paypal.FUNDING.VENMO,
+              paypal.FUNDING.CARD
+            ]
+
+          for (const fundingSource of fundingSources) {
+            const paypalButtonsComponent = paypal.Buttons({
+              fundingSource: fundingSource,
+
+              // optional styling for buttons
+              // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
+              style: {
+                shape: 'pill',
+                height: 40,
+              },
+
+              // set up the transaction
+              createOrder: (data, actions) => {
+                // pass in any options from the v2 orders create call:
+                // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
+                const createOrderPayload = {
+                  purchase_units: [
+                    {
+                      amount: {
+                        value: '88.44',
+                      },
+                    },
+                  ],
+                }
+
+                return actions.order.create(createOrderPayload)
+              },
+
+              // finalize the transaction
+              onApprove: (data, actions) => {
+                const captureOrderHandler = (details) => {
+                  const payerName = details.payer.name.given_name
+                  console.log('Transaction completed!')
+                }
+
+                return actions.order.capture().then(captureOrderHandler)
+              },
+
+              // handle unrecoverable errors
+              onError: (err) => {
+                console.error(
+                  'An error prevented the buyer from checking out with PayPal',
+                )
+              },
+            })
+
+            if (paypalButtonsComponent.isEligible()) {
+              paypalButtonsComponent
+                .render('#paypal-button-container')
+                .catch((err) => {
+                  console.error('PayPal Buttons failed to render')
+                })
+            } else {
+              console.log('The funding source is ineligible')
+            }
+          }
+        </script>
+
+            
+            <div id="smart-button-container">
+                <div style="text-align: center;">
+                  <div style="margin-bottom: 1.25rem;">
+                    <p></p>
+                    <select id="item-options"><option value="test" price="1.00">test - 1.00 USD</option><option value="test2" price="2.00">test2 - 2.00 USD</option></select>
+                    <select style="visibility: hidden" id="quantitySelect"></select>
+                  </div>
+                <div id="paypal-button-container"></div>
+                </div>
+              </div>
+              <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+              <script>
+                function initPayPalButton() {
+                  var shipping = 0;
+                  var itemOptions = document.querySelector("#smart-button-container #item-options");
+              var quantity = parseInt();
+              var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+              if (!isNaN(quantity)) {
+                quantitySelect.style.visibility = "visible";
+              }
+              var orderDescription = '';
+              if(orderDescription === '') {
+                orderDescription = 'Item';
+              }
+              paypal.Buttons({
+                style: {
+                  shape: 'pill',
+                  color: 'gold',
+                  layout: 'vertical',
+                  label: 'paypal',
+                  
+                },
+                createOrder: function(data, actions) {
+                  var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+                  var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+                  var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+                  if(quantitySelect.options.length > 0) {
+                    quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+                  } else {
+                    quantity = 1;
+                  }
+          
+                  tax *= quantity;
+                  tax = Math.round(tax * 100) / 100;
+                  var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+                  priceTotal = Math.round(priceTotal * 100) / 100;
+                  var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+          
+                  return actions.order.create({
+                    purchase_units: [{
+                      description: orderDescription,
+                      amount: {
+                        currency_code: 'USD',
+                        value: priceTotal,
+                        breakdown: {
+                          item_total: {
+                            currency_code: 'USD',
+                            value: itemTotalValue,
+                          },
+                          shipping: {
+                            currency_code: 'USD',
+                            value: shipping,
+                          },
+                          tax_total: {
+                            currency_code: 'USD',
+                            value: tax,
+                          }
+                        }
+                      },
+                      items: [{
+                        name: selectedItemDescription,
+                        unit_amount: {
+                          currency_code: 'USD',
+                          value: selectedItemPrice,
+                        },
+                        quantity: quantity
+                      }]
+                    }]
+                  });
+                },
+                onApprove: function(data, actions) {
+                  return actions.order.capture().then(function(orderData) {
+                    
+                    // Full available details
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+          
+                    // Show a success message within this page, e.g.
+                    const element = document.getElementById('paypal-button-container');
+                    element.innerHTML = '';
+                    element.innerHTML = '<h3>Thank you for your payment!</h3>';
+          
+                    // Or go to another URL:  actions.redirect('thank_you.html');
+          
+                  });
+                },
+                onError: function(err) {
+                  console.log(err);
+                },
+              }).render('#paypal-button-container');
+            }
+            initPayPalButton();
+              </script> 
+     -->       
+
+        <!-- **END OF PAYPAL INTERGRATION BELOW** -->
+
+
+
 
             <div class="social-icon-wrapper">
                         
@@ -168,6 +352,8 @@ SPDX-License-Identifier: Apache-2.0
                 </div>
 
                 </div> <!--  <-- social-icon-wrapper div closer -->
+
+                
     
         </section>
 
@@ -181,6 +367,11 @@ SPDX-License-Identifier: Apache-2.0
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
         <script src="./modules/footer.js"></script>
         <script type="module" src="./modules/cartMain.js"></script>
+
+        <!-- Test script -->
+        <script type="module" src="./modules/addToCart.js"></script>
+        <script type="module" src="./modules/clearCart.js"></script>
+
 
     </body>
 

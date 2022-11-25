@@ -10,6 +10,8 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+import { setBttnOptnValue } from "../modules/addToCart.js";
+
 
 const itemArr = document.querySelectorAll('.inventory');
 const optionArr = document.querySelectorAll('.item-input');
@@ -21,7 +23,6 @@ const setItemButtons = (key, value) => {
   itmbttnArr.forEach(function(target) {
     if (target.dataset.prod === key && value < 1) {
       target.href = './#contact';
-      // need to append with an <a> for href
       target.innerHTML = 'Special Order';
     }
   });
@@ -46,7 +47,7 @@ const renderOptions = (target, value) => {
   qty.value = `null`;
   qty.text = `Qty`;
   target.add(opt, target.options[0]);*/
-
+//setBttnOptnValue(target);
 
 }
 
@@ -55,6 +56,7 @@ const setOptions = (key, value) => {
   optionArr.forEach(function(target) {
     if (target.dataset.prod === key && value > 0) {
       renderOptions(target, value);
+      setBttnOptnValue(target);
     }
   });
 
