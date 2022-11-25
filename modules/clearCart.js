@@ -18,7 +18,6 @@ const clearButton = document.querySelectorAll('.clear-button');
 
 
 function clearCart(event) {
-
     event.preventDefault();
     //localStorage.clear();
     itemDisplayArr.forEach(target => {

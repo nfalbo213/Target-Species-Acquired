@@ -19,19 +19,19 @@ const bluegillSquare = document.getElementById('bluegill-squarebill');
 const bluegill = document.getElementById('bluegill');
 */
 
-const checkLocalStorage = () => {
-    itemDisplayArr.forEach(target => {
-        if (localStorage.getItem(`${target.dataset.prod}`)) {
-            renderItems(`${target.dataset.prod}`);
-        };
-    });
-};
-
 const renderItems = (string) => {
     itemDisplayArr.forEach(target => {
         if (target.dataset.prod === string) {
             target.style.display = 'flex';
         }
+    });
+};
+
+const checkLocalStorage = () => {
+    itemDisplayArr.forEach(target => {
+        if (localStorage.getItem(`${target.dataset.prod}`)) {
+            renderItems(`${target.dataset.prod}`);
+        };
     });
 };
 
