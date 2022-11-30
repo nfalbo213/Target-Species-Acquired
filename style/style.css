@@ -228,8 +228,8 @@ h1 span {
     width: 100px;
     border-radius: 15px;
     border-width: 0px;
-    /*background-color: rgb(130, 130, 130);*/
-    background-color: black;
+    background-color: rgb(130, 130, 130);
+    /*background-color: black;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -328,8 +328,8 @@ h1 span {
     font-weight: bold;*/
     /*font-family: 'Roboto', 'Mada', sans-serif;*/
     font-size: medium;
-    /*background-color: rgb(130, 130, 130);*/
-    background-color: black;
+    background-color: rgb(130, 130, 130);
+    /*background-color: black;*/
     border: 0;
     display: flex;
     justify-content: center;
