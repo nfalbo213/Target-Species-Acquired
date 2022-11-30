@@ -17,8 +17,8 @@ import { itemDisplayArr } from "./renderCart.js";
 const clearButton = document.querySelectorAll('.clear-button');
 
 
-function clearCart(event) {
-    event.preventDefault();
+function clearCart() {
+    // Don't use localStroage.clear becasue it will clear everything in local storage (including items unrelated to TSA website)
     //localStorage.clear();
     itemDisplayArr.forEach(target => {
         if (localStorage.getItem(`${target.dataset.prod}`)) {
@@ -32,7 +32,10 @@ function clearCart(event) {
 
 clearButton.forEach(target => {
     target.addEventListener('click', (event) => {
-        clearCart(event);
+        event.preventDefault();
+        clearCart();
         alert('Cart Updated!');
     });
 });
+
+export { clearCart };

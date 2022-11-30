@@ -28,7 +28,7 @@ const findCartAmount = () => {
         total += num;
     });
 
-    cartText.innerHTML = `${total}`;
+    cartText.textContent = `${total}`;
 
     // Clear cartArr so only the localstorage is getting counted
     cartArr.splice(0);
@@ -80,7 +80,7 @@ function itemToCart(event, target) {
 };
 
 function buttonMessage(target) {
-    target.innerHTML = 'Update Cart';
+    target.textContent = 'Update Cart';
 }
 
 itmbttnArr.forEach(function(target) {
@@ -113,7 +113,7 @@ const setBttnOptnValue = (targ) => {
 
     itmbttnArr.forEach(target => {
         if (target.dataset.prod === targ.dataset.prod && parsedObj != null) {
-            target.innerHTML = 'Update Cart';
+            target.textContent = 'Update Cart';
         }
     });
 };

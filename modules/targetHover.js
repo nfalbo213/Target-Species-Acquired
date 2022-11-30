@@ -18,9 +18,9 @@ function targetGrow (event, target) {
     event.preventDefault;
     if (target.id === "cart" || target.id === "instagram" || target.id === "facebook") {
         target.style.opacity = "0.65";
-        target.style.transform = "scale(1.05)";
+        target.style.transform = "scale(1.10)";
     } else {
-        target.style.backgroundColor = "black";
+        target.style.backgroundColor = "rgb(130, 130, 130)";
         target.style.transform = "scale(1.05)";
     }
 };

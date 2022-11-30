@@ -23,13 +23,13 @@ async function handleSubmit(event) {
             }
         });
         if (response.ok) {
-            formStatus.innerHTML = "🙋🏻‍♂️ Message recieved - we'll get back to you ASAP! 🎣";
+            formStatus.textContent = "🙋🏻‍♂️ Message recieved - we'll get back to you ASAP! 🎣";
             form.reset();
         } else {
-            formStatus.innerHTML = "🤷🏻‍♂️ Oops! There was a problem submitting your message - give it another try... 🎣";
+            formStatus.textContent = "🤷🏻‍♂️ Oops! There was a problem submitting your message - give it another try... 🎣";
         }
     } catch (error) {
-        formStatus.innerHTML = "🤷🏻‍♂️ Oops! There was a problem submitting your message - give it another try... 🎣";
+        formStatus.textContent = "🤷🏻‍♂️ Oops! There was a problem submitting your message - give it another try... 🎣";
         console.error(error);
     }
 };

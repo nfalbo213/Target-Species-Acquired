@@ -18,6 +18,8 @@ SPDX-License-Identifier: Apache-2.0
         <link rel="shortcut icon" type="image/png" sizes="16x16" href="./style/images/favicon/favicon-16x16.png">
         <link rel="manifest" href="./style/images/favicon/site.webmanifest">
         <link rel="stylesheet" type="text/css" href="./style/checkoutStyle.css">
+        <script src="https://www.paypal.com/sdk/js?client-id=Ae1TJOLegPhHEMmNAgb2avmL0mXXEFhsq1p85vndYMJxPwP8bdR7C4oOWy1FHMnyLw55K_of0Bft_iK-&currency=USD"></script>
+
     </head>
 
     <body>
@@ -155,7 +157,7 @@ SPDX-License-Identifier: Apache-2.0
                           </select>
                       </label>
                       <!-- Price/ea (possibly make price change depending on number input)-->
-                      <a id="" class="">$15.00/ea</a>
+                      <a id="" class="">$12.00/ea</a>
                       <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="bluegillSquare">
                           Update Cart
                       </a>
@@ -173,7 +175,7 @@ SPDX-License-Identifier: Apache-2.0
                           </select>
                       </label>
                       <!-- Price/ea (possibly make price change depending on number input)-->
-                      <a id="" class="">$15.00/ea</a>
+                      <a id="" class="">$20.00/ea</a>
                       <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="fireCraw">
                           Update Cart
                       </a>
@@ -191,7 +193,7 @@ SPDX-License-Identifier: Apache-2.0
                           </select>
                       </label>
                       <!-- Price/ea (possibly make price change depending on number input)-->
-                      <a id="" class="">$15.00/ea</a>
+                      <a id="" class="">$18.00/ea</a>
                       <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="goldenShad">
                           Update Cart
                       </a>
@@ -209,7 +211,7 @@ SPDX-License-Identifier: Apache-2.0
                           </select>
                       </label>
                       <!-- Price/ea (possibly make price change depending on number input)-->
-                      <a id="" class="">$15.00/ea</a>
+                      <a id="" class="">$12.00/ea</a>
                       <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="pickleback">
                           Update Cart
                       </a>
@@ -227,7 +229,7 @@ SPDX-License-Identifier: Apache-2.0
                           </select>
                       </label>
                       <!-- Price/ea (possibly make price change depending on number input)-->
-                      <a id="" class="">$12.00/ea</a>
+                      <a id="" class="">$22.00/ea</a>
                       <a id="" class="add-item-button button-class" role="button" aria-roledescription="button to add item to cart" data-prod="rainbowTroutSwim">
                           Update Cart
                       </a>
@@ -241,6 +243,15 @@ SPDX-License-Identifier: Apache-2.0
                 <div class="order-summary">
                     <span class="border-span"></span>
                     <h2>order-summary</h2>
+                    <!--
+                    <a id="" class="post-button button-class" role="button" aria-roledescription="">
+                      Post to Server
+                  </a>
+                  <a id="" class="check-out-button button-class" role="button" aria-roledescription="">
+                    Check Out
+                </a>
+                -->
+                <div id="paypal"></div>
                     <span class="border-span"></span>
                 </div>
             </div>
@@ -405,8 +416,8 @@ SPDX-License-Identifier: Apache-2.0
           
                     // Show a success message within this page, e.g.
                     const element = document.getElementById('paypal-button-container');
-                    element.innerHTML = '';
-                    element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                    element.textContent = '';
+                    element.textContent = '<h3>Thank you for your payment!</h3>';
           
                     // Or go to another URL:  actions.redirect('thank_you.html');
           
@@ -474,7 +485,7 @@ SPDX-License-Identifier: Apache-2.0
 
         </footer>
 
-        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
         <script src="./modules/footer.js"></script>
         <script type="module" src="./modules/cartMain.js"></script>
 
@@ -482,6 +493,11 @@ SPDX-License-Identifier: Apache-2.0
         <script type="module" src="./modules/addToCart.js"></script>
         <script type="module" src="./modules/clearCart.js"></script>
         <script type="module" src="./modules/renderCart.js"></script>
+
+        <script type="module" src="./modules/postOrder.js"></script>
+        <script type="module" src="./modules/checkOut.js"></script>
+
+        <script type="module" src="./modules/paypal.js"></script>
 
 
     </body>

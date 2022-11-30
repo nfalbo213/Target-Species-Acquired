@@ -18,6 +18,9 @@ a, p, span, input, textarea, button, label {
     text-decoration: none;
     color: black;
 }
+#paypal {
+    z-index: 1;
+}
 .button-class {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -267,7 +270,7 @@ nav li {
     background-color: #FFFFFF;
     color: black;
 }
-.add-item-button, .email-button { 
+.add-item-button, .email-button, .clear-button, .post-button, .check-out-button { 
     height: 50px;
     width: 150px;
     /*margin: 1% 0;*/
@@ -276,26 +279,8 @@ nav li {
     font-weight: bold;*/
     /*font-family: 'Roboto', 'Mada', sans-serif;*/
     font-size: medium;
-    background-color: rgb(130, 130, 130);
-    border: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-}
-.clear-button { 
-    height: 50px;
-    width: 150px;
-    /*margin: 1% 0;*/
-    border-radius: 15px;
-    /*font-size: inherit;
-    font-weight: bold;*/
-    /*font-family: 'Roboto', 'Mada', sans-serif;*/
-    font-size: medium;
-    background-color: rgb(130, 130, 130);
+    /*background-color: rgb(130, 130, 130);*/
+    background-color: black;
     border: 0;
     display: flex;
     justify-content: center;

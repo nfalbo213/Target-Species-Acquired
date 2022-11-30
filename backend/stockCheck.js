@@ -17,14 +17,19 @@ const itemArr = document.querySelectorAll('.inventory');
 const optionArr = document.querySelectorAll('.item-input');
 const itmbttnArr = document.querySelectorAll('.add-item-button')
 
-const url = "./backend/warehouse.json";
+//const url = "./backend/warehouse.json";
+//const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://target-species-acquired.herokuapp.com';
+const path = '/check-stock';
+const url = `${baseUrl}${path}`;
+
 
 const setItemButtons = (key, value) => {
   itmbttnArr.forEach(function(target) {
     if (target.dataset.prod === key && value < 1) {
       //target.href = './#contact';
       target.class = 'out-of-stock'
-      target.innerHTML = 'Special Order';
+      target.textContent = 'Special Order';
     }
   });
 };
@@ -69,16 +74,15 @@ const setInventory = (key, value) => {
 // loops through each item to match with key, and sets stock
   itemArr.forEach(function(target) {
     if (target.dataset.prod === key && value > 0) {
-      target.innerHTML = `${value} in stock`;
+      target.textContent = `${value} in stock`;
       target.style.color = 'green';
     } else if (target.dataset.prod === key && value < 1) {
-      target.innerHTML = `Out of stock`;
+      target.textContent = `Out of stock`;
       target.style.color = 'red';
     }
 });
 
 }
-
 
 const renderJsonResponse = (res) => {
     // Creates an empty object to store the JSON in key-value pairs
@@ -116,6 +120,7 @@ const renderJsonResponse = (res) => {
         setOptions(key, rawJson.rainbowTroutSwim);
         setItemButtons(key, rawJson.rainbowTroutSwim);
       }
+      //console.log(rawJson);
       /*
       itemArr.forEach(target => {
         if (key === `${target.dataset.prod}`) {
@@ -136,10 +141,11 @@ async function checkInventory () {
     if (response.ok) {
       const jsonResponse = await response.json();
       renderJsonResponse(jsonResponse);
+      //console.log(response);
     }
   } catch(error) {
     console.log(error.message);
   }
 };
 
-export { checkInventory };
+export { baseUrl, checkInventory };
