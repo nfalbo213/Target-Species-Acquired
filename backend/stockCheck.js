@@ -18,8 +18,8 @@ const optionArr = document.querySelectorAll('.item-input');
 const itmbttnArr = document.querySelectorAll('.add-item-button')
 
 //const url = "./backend/warehouse.json";
-const baseUrl = 'http://localhost:3000';
-//const baseUrl = 'https://target-species-acquired.herokuapp.com';
+//const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://target-species-acquired.herokuapp.com';
 const path = '/check-stock';
 const url = `${baseUrl}${path}`;
 
