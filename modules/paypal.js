@@ -17,6 +17,12 @@ paypal.Buttons({
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(orderObj),
+                mode: "cors",
+                credentials: "omit",
+                cache: "default",
+                redirect: "error",
+                referrer: "",
+                referrerPolicy: "no-referrer",
             }).then(res => {
                 if (res.ok) return res.json()
                 return res.json().then(json => Promise.reject(json))
@@ -31,12 +37,63 @@ paypal.Buttons({
         itemArr = [];
     },
     onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
+        
+        fetch(`${baseUrl}/update-warehouse`, {
+            method: "POST",
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(orderObj),
+            mode: "cors",
+            credentials: "omit",
+            cache: "default",
+            redirect: "error",
+            referrer: "",
+            referrerPolicy: "no-referrer",
+        }).then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.arrayBuffer();
+        })
+
+        return actions.order.capture()
+        /*.then(
+
+            
+            /*async () => {
+            try {
+                fetch(`${baseUrl}/update-warehouse`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(orderObj),
+                })
+            } catch (e) {
+                console.log(e.message)
+            }
+        }*
+        )*/
+        .then(function(details) {
             // READ this is where I can reset the form and also update the inventory
+            /*fetch(`${baseUrl}/update-warehouse`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(orderObj),
+            })*/
             clearCart();
             // Probably want to redirect to a landing 'thank you for your order'
-            window.location.href = "./cart.html";
+            //window.location.href = "./cart.html";
             alert('Transaction completeed by ' + details.payer.name.given_name);    
         })
-    }
+    },
+    style: {
+        layout: 'vertical',
+        color:  'gold',
+        shape:  'pill',
+        label:  'paypal'
+      }
 }).render("#paypal");
