@@ -2,10 +2,14 @@ import { clearCart } from "./clearCart.js";
 import { itemArr, orderObj, /*getShipping,*/ checkLocalStorage } from "./checkOut.js";
 import { baseUrl } from "../backend/stockCheck.js";
 
+import { warehouseObj, getWarehouse, postWarehouse } from "./updateWarehouse.js";
+
 //const baseUrl = 'http://localhost:4000';
 //const baseUrl = 'https://target-species-acquired.herokuapp.com';
 const path = '/create-order';
 const url = `${baseUrl}${path}`;
+
+
 
 paypal.Buttons({
     createOrder: function() {
@@ -38,28 +42,26 @@ paypal.Buttons({
     },
     onApprove: function(data, actions) {
         
-        fetch(`${baseUrl}/update-warehouse`, {
-            method: "POST",
-            headers: {
-                "Content-Type": 'application/json'
-            },
-            body: JSON.stringify(orderObj),
-            mode: "cors",
-            credentials: "omit",
-            cache: "default",
-            redirect: "error",
-            referrer: "",
-            referrerPolicy: "no-referrer",
-        }).then((response) => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.arrayBuffer();
-        })
-
+        //console.log(`onApprove: ${JSON.stringify(warehouseObj)}`)
+        getWarehouse().catch(error => {
+            console.log(error.message);
+        });
+        /*postWarehouse().catch(error => {
+            console.log(error.message);
+        });*/
+        //getWarehouse()
+        //postWarehouse()
+        //getWarehouse()
+        //postWarehouse()
         return actions.order.capture()
         /*.then(
-
+            getWarehouse()
+        )
+        .then(
+            postWarehouse()
+        )*/
+        /*.then(
+        
             
             /*async () => {
             try {
@@ -84,10 +86,32 @@ paypal.Buttons({
                 },
                 body: JSON.stringify(orderObj),
             })*/
-            clearCart();
+            //warehouseObj = {};
+
+            //clearCart();
             // Probably want to redirect to a landing 'thank you for your order'
             //window.location.href = "./cart.html";
-            alert('Transaction completeed by ' + details.payer.name.given_name);    
+            //window.location.href = "./thank-you.html"
+            //alert('Transaction completeed by ' + details.payer.name.given_name);    
+            console.log(details.payer.name.given_name)
+            console.log(data)
+
+            /* ***** NEW IDEA ***** send to 'thanks for your order" page that says "Thanks for your order ${details.payer.name.given_name}!" and has an eventlistner on page load that invokes getWarehouse & postWarhouse; Might need to store orderObj data in global variable
+            
+            also.....
+            
+            consider blowing up updateWarehouse.js and starting fresh (it will need to be refactored at some point anyways)
+            
+            */
+
+
+
+        })
+        .then(clearCart)
+        //.then(getWarehouse)
+        //.then(postWarehouse)
+        .catch(error => {
+            console.log(error.message)
         })
     },
     style: {

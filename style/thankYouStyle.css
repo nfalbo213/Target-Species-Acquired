@@ -1,0 +1,46 @@
+/*
+Copyright 2022 Nick Falbo (https://nick.falbo.dev)
+SPDX-License-Identifier: Apache-2.0
+*/
+body {
+    margin: 0;
+}
+.main-section {
+    display: grid;
+    place-items: center;
+    align-items: center;
+}
+.background {
+    height: 800px;
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+    position: fixed;
+    display: none;
+}
+img {
+    height: 300px;
+    width: 300px;
+}
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1% 0;
+    background-color: black;
+    /*z-index: 99;*/
+}
+
+@media screen and (max-width: 800px) {
+    footer {
+        padding: 3% 0;
+    }
+}
+
+footer span, footer a {
+    color: #FFFFFF;
+}
+footer a {
+    text-decoration: underline;
+}
