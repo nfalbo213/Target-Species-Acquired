@@ -122,8 +122,8 @@ const setBttnOptnValue = (targ) => {
 
 const specialOrderMessage = (target) => {
     const contactText = document.getElementById('contact-text');
-    contactText.placeholder = `Hi, I'm [YOUR NAME]. I'd like to special order a ${target.dataset.name}!`;
-    contactText.textContent = `Hi, I'm [YOUR NAME]. I'd like to special order a ${target.dataset.name}!`;
+    contactText.placeholder = `Hi - I'm [🙋🏻‍♂️YOUR NAME HERE], and I'd like to special order a ${target.dataset.name}!`;
+    contactText.textContent = `Hi - I'm [🙋🏻‍♂️ YOUR NAME HERE], and I'd like to special order a ${target.dataset.name}!`;
 }
 
 export { optionArr, itmbttnArr, setBttnOptnValue, findCartAmount, buttonMessage, itemToCart, specialOrderMessage, setCart };

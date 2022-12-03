@@ -13,7 +13,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 
 import { setCart } from "./addToCart.js";
 import { itemDisplayArr } from "./renderCart.js";
-import { findLocalItems } from "./calculateCart.js";
+import { totalDivArr, findLocalItems } from "./calculateCart.js";
 
 const clearButton = document.querySelectorAll('.clear-button');
 const clearItemArr = document.querySelectorAll('.remove-item-button');
@@ -24,6 +24,11 @@ const clearItem = (target) => {
             localStorage.removeItem(`${targ.dataset.prod}`);
             targ.style.display = 'none';
         }
+    totalDivArr.forEach(targ => {
+        if (`${target.dataset.prod}` === `${targ.dataset.prod}`) {
+            targ.style.display = 'none';
+        }
+    })
     })
     setCart();
 }

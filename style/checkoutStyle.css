@@ -20,6 +20,7 @@ a, p, span, input, textarea, button, label {
 }
 #paypal {
     z-index: 1;
+    margin-top: 5%;
 }
 .button-class {
     -webkit-transform: scale(1);
@@ -202,7 +203,8 @@ nav li {
 
 @media screen and (max-width: 850px) {
     .checkout-item-wrapper {
-        flex-direction: column-reverse;
+        /*flex-direction: column-reverse;*/
+        flex-direction: column;
     }
 }
 
@@ -297,6 +299,9 @@ nav li {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+.item-type-total {
+    display: none;
 }
 /* Footer */
 footer {
