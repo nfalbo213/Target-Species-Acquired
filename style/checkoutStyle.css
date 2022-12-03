@@ -270,7 +270,7 @@ nav li {
     background-color: #FFFFFF;
     color: black;
 }
-.add-item-button, .email-button, .clear-button, .post-button, .check-out-button { 
+.add-item-button, .email-button, .clear-button, .post-button, .check-out-button, .remove-item-button { 
     height: 50px;
     width: 150px;
     /*margin: 1% 0;*/
@@ -290,7 +290,14 @@ nav li {
     text-decoration: none;
     color: white;
 }
-
+/* order summary */
+.total {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 /* Footer */
 footer {
     display: flex;

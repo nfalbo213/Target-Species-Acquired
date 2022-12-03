@@ -82,7 +82,7 @@ function itemToCart(event, target) {
 function buttonMessage(target) {
     target.textContent = 'Update Cart';
 }
-
+/*
 itmbttnArr.forEach(function(target) {
     target.addEventListener('click', (event) => {
         if (target.class === 'out-of-stock') {
@@ -91,10 +91,12 @@ itmbttnArr.forEach(function(target) {
         } else {
             itemToCart(event, target);
             buttonMessage(target);
+            findLocalItems();
             alert('Cart Updated!');
         }
     });
 });
+*/
 
 //setCartDisplayNum();
 setCart();
@@ -118,4 +120,10 @@ const setBttnOptnValue = (targ) => {
     });
 };
 
-export { optionArr, setBttnOptnValue, findCartAmount };
+const specialOrderMessage = (target) => {
+    const contactText = document.getElementById('contact-text');
+    contactText.placeholder = `Hi, I'm [YOUR NAME]. I'd like to special order a ${target.dataset.name}!`;
+    contactText.textContent = `Hi, I'm [YOUR NAME]. I'd like to special order a ${target.dataset.name}!`;
+}
+
+export { optionArr, itmbttnArr, setBttnOptnValue, findCartAmount, buttonMessage, itemToCart, specialOrderMessage, setCart };

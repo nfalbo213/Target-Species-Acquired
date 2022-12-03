@@ -17,6 +17,7 @@ import { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, se
 import { setHomeSize } from "./homeDisplay.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { form, handleSubmit } from "./contact.js";
+import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage } from "./addToCart.js";
 // **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
 //import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
 
@@ -72,7 +73,19 @@ navThree.onpointerup = (event) => {
 }
 
 // BUTTONS /////////////////////////
-
+itmbttnArr.forEach(function(target) {
+    target.addEventListener('click', (event) => {
+        if (target.class === 'out-of-stock') {
+            event.preventDefault();
+            window.location.replace("#contact");
+            specialOrderMessage(target);
+        } else {
+            itemToCart(event, target);
+            buttonMessage(target);
+            alert('Cart Updated!');
+        }
+    });
+});
 buttonArr.forEach(function(target) {
     target.addEventListener('pointerover', (event) => {
         targetGrow(event, target);

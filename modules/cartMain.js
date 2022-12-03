@@ -16,6 +16,8 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 import { hamburger, navZero, navOne, navTwo, navThree, navObject, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { checkInventory } from "../backend/stockCheck.js";
+import { findLocalItems } from "./calculateCart.js"
+import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage } from "./addToCart.js";
 
 // WINDOW EVENTS ///////////////////////////
 
@@ -23,6 +25,7 @@ window.addEventListener ('load', (event) => {
     event.preventDefault();
     navHeightSet();
     setSectionPadding(event);
+    findLocalItems();
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
@@ -64,7 +67,21 @@ navThree.onpointerup = (event) => {
 }
 
 // BUTTONS /////////////////////////
-
+itmbttnArr.forEach(function(target) {
+    target.addEventListener('click', (event) => {
+        if (target.class === 'out-of-stock') {
+            event.preventDefault();
+            window.location.replace("#contact");
+            specialOrderMessage(target);
+        } else {
+            itemToCart(event, target);
+            buttonMessage(target);
+            // ensure total updates when cart update buttons clicked
+            findLocalItems();
+            alert('Cart Updated!');
+        }
+    });
+});
 buttonArr.forEach(function(target) {
     target.addEventListener('pointerover', (event) => {
         targetGrow(event, target);
