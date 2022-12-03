@@ -22,14 +22,9 @@ const checkWidth = () => {
 }
 
 // Exported Functions
-function setHomeSize(isHomePage) {
-    if (!isHomePage) {
-        homeWrapper.style.height = `${checkHeight()-checkFooterHeight()}px`;
-        homeWrapper.style.width = `${checkWidth()}px`;
-    } else if (isHomePage) {
-        homeWrapper.style.height = `${checkHeight()}px`;
-        homeWrapper.style.width = `${checkWidth()}px`;
-    }  
+function setSectionSize() {
+    homeWrapper.style.height = `${checkHeight()-checkFooterHeight()}px`;
+    homeWrapper.style.width = `${checkWidth()}px`;
 };
 
-export { setHomeSize };
+export { setSectionSize };

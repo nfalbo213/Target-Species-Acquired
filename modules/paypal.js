@@ -77,6 +77,7 @@ paypal.Buttons({
             }
         }*
         )*/
+        //.then(clearCart)
         .then(function(details) {
             // READ this is where I can reset the form and also update the inventory
             /*fetch(`${baseUrl}/update-warehouse`, {
@@ -91,10 +92,17 @@ paypal.Buttons({
             //clearCart();
             // Probably want to redirect to a landing 'thank you for your order'
             //window.location.href = "./cart.html";
-            //window.location.href = "./thank-you.html"
+
+            //console.log(details.payer.name.given_name)
+            localStorage.setItem('payer-name', `${details.payer.name.given_name}`)
+            //localStorage.setItem('payer-name', `Test Name`)
+            clearCart()
+            window.location.href = "./thank-you.html"
+            //const buyerName = document.getElementById('buyer-name')
+            //buyerName.textContent = `${details.payer.name.given_name}`
             //alert('Transaction completeed by ' + details.payer.name.given_name);    
-            console.log(details.payer.name.given_name)
-            console.log(data)
+            //console.log(details.payer.name.given_name)
+            //console.log(data)
 
             /* ***** NEW IDEA ***** send to 'thanks for your order" page that says "Thanks for your order ${details.payer.name.given_name}!" and has an eventlistner on page load that invokes getWarehouse & postWarhouse; Might need to store orderObj data in global variable
             
@@ -106,8 +114,11 @@ paypal.Buttons({
 
 
 
-        })
-        .then(clearCart)
+        })/*.then(function(details) {
+            const buyerName = document.getElementById('buyer-name')
+            buyerName.textContent = `${details.payer.name.given_name}`
+        })*/
+        //.then(clearCart)
         //.then(getWarehouse)
         //.then(postWarehouse)
         .catch(error => {

@@ -26,7 +26,7 @@ window.addEventListener ('load', (event) => {
     event.preventDefault();
     navHeightSet();
     setSectionPadding(event);
-    setHomeSize();
+    setHomeSize(true);
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
@@ -34,7 +34,7 @@ window.addEventListener ('resize', (event) => {
     setSectionPadding(event);
     let width = window.innerWidth;
     if(width > 600) {
-        setHomeSize();
+        setHomeSize(true);
     }
 });
 
