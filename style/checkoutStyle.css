@@ -325,6 +325,9 @@ nav li {
 .item-type-total {
     display: none;
 }
+.item-qty {
+    width: 60%;
+}
 /* Footer */
 footer {
     display: flex;
