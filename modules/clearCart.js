@@ -42,6 +42,10 @@ function clearCart() {
             target.style.display = 'none';
         }
     })
+    // Clear ALL subtotal items
+    totalDivArr.forEach(targ => {
+        targ.style.display = 'none';
+    })
     // Set number in Cart icon
     setCart();
 };
