@@ -18,6 +18,7 @@ import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { checkInventory } from "../backend/stockCheck.js";
 import { findLocalItems } from "./calculateCart.js"
 import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage } from "./addToCart.js";
+import { chckOrdrSumHght } from "./cartDisplay.js"
 
 // WINDOW EVENTS ///////////////////////////
 
@@ -26,11 +27,13 @@ window.addEventListener ('load', (event) => {
     navHeightSet();
     setSectionPadding(event);
     findLocalItems();
+    chckOrdrSumHght();
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
     navHeightSet();
     setSectionPadding(event);
+    chckOrdrSumHght();
 });
 
 // MOBILE NAVBAR /////////////////////////

@@ -13,12 +13,6 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 
 const itemDisplayArr = document.querySelectorAll('.product-item');
 
-/*
-const bluegill = document.getElementById('bluegill');
-const bluegillSquare = document.getElementById('bluegill-squarebill');
-const bluegill = document.getElementById('bluegill');
-*/
-
 const renderItems = (string) => {
     itemDisplayArr.forEach(target => {
         if (target.dataset.prod === string) {

@@ -9,6 +9,7 @@ SPDX-License-Identifier: Apache-2.0
 html {
     font-size: 125%;
     /*scroll-behavior: smooth;*/
+    /*overflow-y: scroll;*/
 }
 body {
     margin: 0 auto;
@@ -198,13 +199,15 @@ nav li {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
+    align-content: center;
 }
 
 @media screen and (max-width: 850px) {
     .checkout-item-wrapper {
         /*flex-direction: column-reverse;*/
         flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -213,11 +216,30 @@ nav li {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    
+    /*display: grid;
+    place-items: center;*/
+    /*align-items: center;*/
 }
 
 .checkout-items {
     margin-bottom: 3%;
 }
+
+/*
+.items-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    /*padding-left: 60%;*/
+    /*display: grid;
+    place-items: center;
+    align-content: center;*
+}*/
+
+
 
 .border-span {
     height: 1px;
