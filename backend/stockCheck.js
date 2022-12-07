@@ -10,7 +10,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-import { setBttnOptnValue } from "../modules/addToCart.js";
+import { setBttnOptnValue } from "../modules/renderOptions.js";
 
 
 const itemArr = document.querySelectorAll('.inventory');
@@ -18,8 +18,8 @@ const optionArr = document.querySelectorAll('.item-input');
 const itmbttnArr = document.querySelectorAll('.add-item-button')
 
 //const url = "./backend/warehouse.json";
-//const baseUrl = 'http://localhost:3000';
-const baseUrl = 'https://target-species-acquired.herokuapp.com';
+const baseUrl = 'http://localhost:3000';
+//const baseUrl = 'https://target-species-acquired.herokuapp.com';
 const path = '/check-stock';
 const url = `${baseUrl}${path}`;
 
@@ -90,12 +90,12 @@ const renderJsonResponse = (res) => {
     for(let key in res){
       rawJson[key] = res[key];
       //console.log(res[key]);
-      if (key === "bluegill") {
+      if (key === "flatNatBornGiller") {
         setInventory(key, rawJson.bluegill);
         setOptions(key, rawJson.bluegill);
         setItemButtons(key, rawJson.bluegill);
       }
-      if (key === "bluegillSquare") {
+      if (key === "crankNatBornGiller") {
         setInventory(key, rawJson.bluegillSquare);
         setOptions(key, rawJson.bluegillSquare);
         setItemButtons(key, rawJson.bluegillSquare);
@@ -116,6 +116,11 @@ const renderJsonResponse = (res) => {
         setItemButtons(key, rawJson.pickleback);
       }
       if (key === "rainbowTroutSwim") {
+        setInventory(key, rawJson.rainbowTroutSwim);
+        setOptions(key, rawJson.rainbowTroutSwim);
+        setItemButtons(key, rawJson.rainbowTroutSwim);
+      }
+      if (key === "m450") {
         setInventory(key, rawJson.rainbowTroutSwim);
         setOptions(key, rawJson.rainbowTroutSwim);
         setItemButtons(key, rawJson.rainbowTroutSwim);

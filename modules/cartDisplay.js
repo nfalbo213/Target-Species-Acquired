@@ -11,8 +11,10 @@ const chckOrdrSumHght = () => {
     if (width > 850) {
         const fixedHeight = orderSummaryWrapper.getBoundingClientRect();
         let height = fixedHeight.height - 140;
-        itemsWrapper.style.height = `${height}px`;
-        itemsWrapper.style.overflowY = 'auto';
+        
+        //itemsWrapper.style.height = `${height}px`;
+        //itemsWrapper.style.overflowY = 'auto';
+
         //itemsWrapper.style.overflow = 'scroll';
         //itemsWrapper.style.scrollMarginInlineStart = '0';
         //itemsWrapper.style.overflowX = 'visible';

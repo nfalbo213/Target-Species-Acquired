@@ -15,34 +15,14 @@ import { itemDisplayArr } from "./renderCart.js";
 import { clearCart } from "./clearCart.js";
 
 const checkOutButton = document.querySelectorAll('.check-out-button');
-
-// **TODO** Create bellow on clientside of TSA website; then, intergrate the two
-const itemArr = [
-    /*{ id: 1,
-    quantity: 2 }, 
-    { id: 6,
-    quantity: 1 },
-    { id: 2,
-    quantity: 1 }*/
-];
-
-let orderObj = {items: itemArr};
-// End of TODO
-
-/*const getShipping = () => {
-    let num = 0;
-    itemArr.forEach(target => {
-        num += target.quantity;
-    });
-    console.log(num);
-}*/
+const itemInputArr = document.querySelectorAll('.item-input')
 
 const getItemIdNum = (parsedObj) => {
 
-    if (parsedObj.item === "bluegill") {
+    if (parsedObj.item === "flatNatBornGiller") {
         return 1;
     }
-    if (parsedObj.item === "bluegillSquare") {
+    if (parsedObj.item === "crankNatBornGiller") {
         return 2;
     }
     if (parsedObj.item === "fireCraw") {
@@ -57,6 +37,24 @@ const getItemIdNum = (parsedObj) => {
     if (parsedObj.item === "rainbowTroutSwim") {
         return 6;
     }
+    if (parsedObj.item === "m450") {
+        return 7;
+    }
+    if (parsedObj.item === "invertNatBornGiller") {
+        return 8;
+    }
+    if (parsedObj.item === "tsaKoozie") {
+        return 9;
+    }
+    if (parsedObj.item === "tsaHatBlack") {
+        return 10;
+    }
+    if (parsedObj.item === "tsaHatBlackYellow") {
+        return 11;
+    }
+    if (parsedObj.item === "tsaHatBlue") {
+        return 12;
+    }
 
 }
 
@@ -67,27 +65,28 @@ const sortLocalObjects = (targ) => {
     let num = Number(parsedObj.qty);
     let itemId = getItemIdNum(parsedObj);
     let obj;
-    obj = {id: itemId, quantity: num}
-    itemArr.push(obj);
+    obj = {id: itemId, quantity: num};
+    return obj;
 
 }
 
 const checkLocalStorage = () => {
-    itemDisplayArr.forEach(target => {
+    let arr = [];
+    itemInputArr.forEach(target => {
         if (localStorage.getItem(`${target.dataset.prod}`)) {
-            sortLocalObjects(target);
+            arr.push(sortLocalObjects(target));
         }
     })
+    let obj = {items: arr};
+    return obj;
 }
 
 checkOutButton.forEach(target => {
     target.addEventListener('click', (event) => {
         event.preventDefault();
         checkLocalStorage();
-        console.log(orderObj); // orderObj will be pushed into order
-        //itemArr.splice(0); // not necessary because itemArr auto-erased when page is reloaded
         clearCart();
     })
 })
 
-export { itemArr, orderObj, /*getShipping,*/ checkLocalStorage };
+export { checkLocalStorage };

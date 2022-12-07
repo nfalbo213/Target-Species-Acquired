@@ -1,9 +1,8 @@
-/*
-Copyright 2022 Nick Falbo (https://nick.falbo.dev)
-SPDX-License-Identifier: Apache-2.0
-*/
+/*Copyright 2022 Nick Falbo (https://nick.falbo.dev)
+SPDX-License-Identifier: Apache-2.0*/
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Roboto+Condensed:wght@400;700;900');
 /*@import url('https://fonts.googleapis.com/css2?family=Mada:wght@400;700&family=Roboto&display=swap');*/
 
 html {
@@ -15,13 +14,19 @@ body {
     margin: 0 auto;
 }
 a, p, span, input, textarea, button, label {
-    /*font-family: 'Mada', 'Roboto', sans-serif;*/
+    font-family: 'Roboto Condensed', 'Roboto', sans-serif;
     text-decoration: none;
     color: black;
+}
+h1, h2, h3, h4 {
+    font-family: /*'Roboto Condensed',*/ 'Roboto', sans-serif;
 }
 #paypal {
     z-index: 1;
     margin-top: 5%;
+}
+.link {
+    text-decoration: underline;
 }
 .button-class {
     -webkit-transform: scale(1);
@@ -29,12 +34,17 @@ a, p, span, input, textarea, button, label {
     -webkit-transition: .15s ease-in-out;
     transition: .15s ease-in-out;
 }
-.social-icon-wrapper {
-    width: 100%;
+.social-icon-wrapper, .empty-cart-social {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 3%;
+}
+.social-icon-wrapper {
+    width: 100%;
+}
+.empty-cart-social {
+    width: 25%;
 }
 /* Navbar */
 .navbar {
@@ -224,6 +234,7 @@ nav li {
 
 .checkout-items {
     margin-bottom: 3%;
+    display: none;
 }
 
 /*
@@ -239,14 +250,28 @@ nav li {
     align-content: center;*
 }*/
 
-
-
-.border-span {
-    height: 1px;
+.border-span, .item-span {
     width: 100%;
     background-color: black;
-    border-radius: 15%;
+    /*border-radius: 15%;*/
     display: block;
+}
+.border-span {
+    height: 3px;
+    background-color: black;
+}
+.item-span {
+    height: 0.5px;
+    background-color: rgb(130, 130, 130);
+    /*background-color: lightgray;*/
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.top-span {
+    margin-top: 3%;
+}
+.bottom-span {
+    margin-bottom: 3%;
 }
 
 @media screen and (max-width: 850px) {
@@ -294,6 +319,9 @@ nav li {
     background-color: #FFFFFF;
     color: black;
 }
+.inventory {
+    display: none;
+}
 .add-item-button, .email-button, .clear-button, .post-button, .check-out-button, .remove-item-button { 
     height: 50px;
     width: 150px;
@@ -325,8 +353,28 @@ nav li {
 .item-type-total {
     display: none;
 }
-.item-qty {
-    width: 60%;
+.item-type-buttons {
+    display: none;
+    justify-content: space-evenly;
+    margin-top: 3%;
+}
+.item-qty, .shipping-description, .tax-description, .shipping-description {
+    width: 25%;
+}
+#total-amount {
+    font-weight: bold;
+}
+#home-wrapper, #main-wrapper {
+    visibility: hidden;
+}
+#home-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*place-items: center;
+    align-items: center;*/
+    margin: 0;
 }
 /* Footer */
 footer {
@@ -345,6 +393,7 @@ footer {
 
 footer span, footer a {
     color: #FFFFFF;
+    font-family: /*'Roboto Condensed',*/ 'Roboto', sans-serif;
 }
 footer a {
     text-decoration: underline;

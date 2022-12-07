@@ -18,6 +18,7 @@ import { setHomeSize } from "./homeDisplay.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { form, handleSubmit } from "./contact.js";
 import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage } from "./addToCart.js";
+import { createOptions } from "./renderOptions.js";
 // **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
 //import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
 
@@ -26,6 +27,7 @@ import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage } from "./ad
 window.addEventListener ('load', (event) => {
     event.preventDefault();
     navHeightSet();
+    createOptions();
     setSectionPadding(event);
     setHomeSize(true);
 });
@@ -130,8 +132,8 @@ window.addEventListener('scroll', (event) => {
 });
 */
 
-import { checkInventory } from "../backend/stockCheck.js";
+//import { checkInventory } from "../backend/stockCheck.js";
 
-checkInventory();
+//checkInventory();
 //console.log(rawJson);
 //console.log(rawJson);

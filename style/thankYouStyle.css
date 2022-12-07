@@ -1,15 +1,24 @@
-/*
-Copyright 2022 Nick Falbo (https://nick.falbo.dev)
-SPDX-License-Identifier: Apache-2.0
-*/
+/*Copyright 2022 Nick Falbo (https://nick.falbo.dev)
+SPDX-License-Identifier: Apache-2.0*/
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Roboto+Condensed:wght@400;700;900');
 body {
     margin: 0;
 }
+a, p, span, input, textarea, button, label {
+    font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+h1, h2, h3, h4 {
+    font-family: /*'Roboto Condensed',*/ 'Roboto', sans-serif;
+}
 .main-section {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    align-content: center;
     margin: 0;
 }
 #cart-text {
@@ -26,6 +35,16 @@ body {
 img {
     height: 300px;
     width: 300px;
+}
+.social-icon-wrapper {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 3%;
+}
+.link-class {
+    text-decoration: underline;
 }
 /* Footer */
 footer {
@@ -46,6 +65,7 @@ footer {
 
 footer span, footer a {
     color: #FFFFFF;
+    font-family: /*'Roboto Condensed',*/ 'Roboto', sans-serif;
 }
 footer a {
     text-decoration: underline;

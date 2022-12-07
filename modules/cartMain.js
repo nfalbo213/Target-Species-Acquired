@@ -19,6 +19,8 @@ import { checkInventory } from "../backend/stockCheck.js";
 import { findLocalItems } from "./calculateCart.js"
 import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage } from "./addToCart.js";
 import { chckOrdrSumHght } from "./cartDisplay.js"
+import { createOptions } from "./renderOptions.js"
+import { setHomeSize } from "./homeDisplay.js";
 
 // WINDOW EVENTS ///////////////////////////
 
@@ -27,13 +29,18 @@ window.addEventListener ('load', (event) => {
     navHeightSet();
     setSectionPadding(event);
     findLocalItems();
-    chckOrdrSumHght();
+    //chckOrdrSumHght();
+    createOptions();
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
     navHeightSet();
     setSectionPadding(event);
-    chckOrdrSumHght();
+    //chckOrdrSumHght();
+    const cartEmpty = document.getElementById('home-wrapper');
+    if (cartEmpty.style.display === 'flex') {
+        setHomeSize(false);
+    };
 });
 
 // MOBILE NAVBAR /////////////////////////
@@ -96,4 +103,4 @@ buttonArr.forEach(function(target) {
     });
 });
 
-checkInventory();
+//checkInventory();

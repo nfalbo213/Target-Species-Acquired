@@ -22,11 +22,17 @@ const renderItems = (string) => {
 };
 
 const checkLocalStorage = () => {
+    //let arr = [];
     itemDisplayArr.forEach(target => {
         if (localStorage.getItem(`${target.dataset.prod}`)) {
             renderItems(`${target.dataset.prod}`);
+            //arr.push(target);
         };
     });
+    /*if (arr.length === 0 ) {
+        const cartDisplay = document.getElementById('cart-display');
+        cartDisplay.style.display = 'none';
+    }*/
 };
 
 checkLocalStorage();

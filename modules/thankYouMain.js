@@ -4,6 +4,7 @@ SPDX-License-Identifier: Apache-2.0
 */
 import { warehouseObj, getWarehouse, postWarehouse } from "./updateWarehouse.js";
 import { setHomeSize } from "./homeDisplay.js";
+import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 //import { setSectionSize } from "./thankYouDisplay.js";
 
 const buyerName = document.getElementById("buyer-name");
@@ -22,12 +23,20 @@ const setName = () => {
 window.addEventListener('load', (event) => {
     event.preventDefault();
     setHomeSize(false);
-    //setSectionSize();
     setName();
-    /*getWarehouse().catch(error => {
-        console.log(error.message);
+});
+window.addEventListener('resize', (event) => {
+    event.preventDefault();
+    setHomeSize(false);
+});
+
+buttonArr.forEach(function(target) {
+    target.addEventListener('pointerover', (event) => {
+        targetGrow(event, target);
     });
-    postWarehouse().catch(error => {
-        console.log(error.message);
-    });*/
-})
+});
+buttonArr.forEach(function(target) {
+    target.addEventListener('pointerleave', (event) => {
+        targetShrink(event, target);
+    });
+});

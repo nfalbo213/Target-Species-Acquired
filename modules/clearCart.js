@@ -17,9 +17,10 @@ import { totalDivArr, findLocalItems } from "./calculateCart.js";
 
 const clearButton = document.querySelectorAll('.clear-button');
 const clearItemArr = document.querySelectorAll('.remove-item-button');
+const itemArr = document.querySelectorAll('.item-type-total');
 
 const clearItem = (target) => {
-    itemDisplayArr.forEach(targ => {
+    itemArr.forEach(targ => {
         if(`${target.dataset.prod}` === `${targ.dataset.prod}`) {
             localStorage.removeItem(`${targ.dataset.prod}`);
             targ.style.display = 'none';
@@ -36,7 +37,7 @@ const clearItem = (target) => {
 function clearCart() {
     // Don't use localStroage.clear becasue it will clear everything in local storage (including items unrelated to TSA website)
     //localStorage.clear();
-    itemDisplayArr.forEach(target => {
+    itemArr.forEach(target => {
         if (localStorage.getItem(`${target.dataset.prod}`)) {
             localStorage.removeItem(`${target.dataset.prod}`);
             target.style.display = 'none';

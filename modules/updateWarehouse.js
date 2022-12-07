@@ -12,7 +12,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 */
 
 import { baseUrl } from "../backend/stockCheck.js";
-import { orderObj } from "./checkOut.js";
+import { checkLocalStorage } from "./checkOut.js";
 
 let warehouseObj = {};
 
@@ -64,10 +64,10 @@ const updateWarehouse = (jsonResponse) => {
     
             for(let key in jsonRes){
               //jsonResponse[key]
-              if (key === "bluegill") {
+              if (key === "flatNatBornGiller") {
                 bluegillStock = jsonRes[key]
               }
-              if (key === "bluegillSquare") {
+              if (key === "crankNatBornGiller") {
                 bluegillSquareStock = jsonRes[key]
               }
               if (key === "fireCraw") {
@@ -127,7 +127,7 @@ const updateWarehouse = (jsonResponse) => {
                     rainbowTroutSwimQty = rainbowTroutSwimStock - element.quantity
                 }  
             })*/
-            loop(orderObj);
+            loop(checkLocalStorage());
             warehouseObjecty = {bluegill: bluegillQty, bluegillSquare: bluegillSquareQty, fireCraw: fireCrawQty, goldenShad: goldenShadQty, pickleback: picklebackQty, rainbowTroutSwim: rainbowTroutSwimQty}
             //console.log(warehouseObj)
         }

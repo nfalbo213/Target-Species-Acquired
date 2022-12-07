@@ -18,6 +18,15 @@ const cartText = document.getElementById("cart-text");
 
 let cartArr = [];
 
+const updateBttnTxt = (target) => {
+    itmbttnArr.forEach(targ => {
+        if (`${targ.dataset.prod}` === `${target.item}`) {
+            //targ.textContent = 'Update Cart';
+            buttonMessage(targ);
+        };
+    });
+};
+
 const findCartAmount = () => {
 
     let total = 0;
@@ -26,6 +35,7 @@ const findCartAmount = () => {
         let num = Number(target.qty)
         //totalArr.push(num);
         total += num;
+        updateBttnTxt(target);
     });
 
     cartText.textContent = `${total}`;
@@ -102,28 +112,10 @@ itmbttnArr.forEach(function(target) {
 setCart();
 //setButtons();
 
-const setBttnOptnValue = (targ) => {
-    
-    let localObj = localStorage.getItem( `${targ.dataset.prod}` );
-    const parsedObj = JSON.parse(localObj);
-    
-    optionArr.forEach(target => {
-        if (target.dataset.prod === targ.dataset.prod && parsedObj != null) {
-            target.value = parsedObj.qty;
-        }
-    });
-
-    itmbttnArr.forEach(target => {
-        if (target.dataset.prod === targ.dataset.prod && parsedObj != null) {
-            target.textContent = 'Update Cart';
-        }
-    });
-};
-
 const specialOrderMessage = (target) => {
     const contactText = document.getElementById('contact-text');
     contactText.placeholder = `Hi - I'm [🙋🏻‍♂️YOUR NAME HERE], and I'd like to special order a ${target.dataset.name}!`;
     contactText.textContent = `Hi - I'm [🙋🏻‍♂️ YOUR NAME HERE], and I'd like to special order a ${target.dataset.name}!`;
 }
 
-export { optionArr, itmbttnArr, setBttnOptnValue, findCartAmount, buttonMessage, itemToCart, specialOrderMessage, setCart };
+export { optionArr, itmbttnArr, findCartAmount, buttonMessage, itemToCart, specialOrderMessage, setCart };
