@@ -112,10 +112,16 @@ itmbttnArr.forEach(function(target) {
 setCart();
 //setButtons();
 
+const multiOrdBttnMessage = (target) => {
+    const contactText = document.getElementById('contact-text');
+    contactText.placeholder = `Hi - I'm [🙋🏻‍♂️YOUR NAME HERE], and I'd like to order a batch of [NUMBER HERE (10+)] ${target.dataset.name}s!`;
+    contactText.textContent = `Hi - I'm [🙋🏻‍♂️YOUR NAME HERE], and I'd like to order a batch of [NUMBER HERE (10+)] ${target.dataset.name}s!`;
+}
+
 const specialOrderMessage = (target) => {
     const contactText = document.getElementById('contact-text');
     contactText.placeholder = `Hi - I'm [🙋🏻‍♂️YOUR NAME HERE], and I'd like to special order a ${target.dataset.name}!`;
     contactText.textContent = `Hi - I'm [🙋🏻‍♂️ YOUR NAME HERE], and I'd like to special order a ${target.dataset.name}!`;
 }
 
-export { optionArr, itmbttnArr, findCartAmount, buttonMessage, itemToCart, specialOrderMessage, setCart };
+export { optionArr, itmbttnArr, findCartAmount, buttonMessage, itemToCart, specialOrderMessage, multiOrdBttnMessage, setCart };

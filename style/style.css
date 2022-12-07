@@ -326,7 +326,7 @@ h1 span {
 .inventory {
     display: none;
 }
-.add-item-button, .email-button { 
+.add-item-button, .ten-plus-order, .email-button { 
     height: 50px;
     width: 150px;
     /*margin: 1% 0;*/
@@ -345,6 +345,9 @@ h1 span {
     cursor: pointer;
     text-decoration: none;
     color: white;
+}
+.ten-plus-order {
+    margin-top: 3%;
 }
 
 /* Contact Section */

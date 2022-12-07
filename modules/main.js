@@ -17,10 +17,12 @@ import { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, se
 import { setHomeSize } from "./homeDisplay.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { form, handleSubmit } from "./contact.js";
-import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage } from "./addToCart.js";
+import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage, multiOrdBttnMessage } from "./addToCart.js";
 import { createOptions } from "./renderOptions.js";
 // **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
 //import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
+
+const multiOrdBttnArr = document.querySelectorAll('.ten-plus-order');
 
 // WINDOW EVENTS ///////////////////////////
 
@@ -75,7 +77,13 @@ navThree.onpointerup = (event) => {
 }
 
 // BUTTONS /////////////////////////
-itmbttnArr.forEach(function(target) {
+multiOrdBttnArr.forEach(target => {
+    target.addEventListener('click', (event) => {
+        multiOrdBttnMessage(target);
+        window.location.replace("#contact");
+    });
+});
+itmbttnArr.forEach(target => {
     target.addEventListener('click', (event) => {
         if (target.class === 'out-of-stock') {
             event.preventDefault();
