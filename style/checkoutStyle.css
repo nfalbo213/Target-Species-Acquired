@@ -25,14 +25,14 @@ h1, h2, h3, h4 {
     z-index: 1;
     margin-top: 5%;
 }
-.link {
-    text-decoration: underline;
-}
 .button-class {
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .15s ease-in-out;
     transition: .15s ease-in-out;
+}
+.link-class {
+    text-decoration: underline;
 }
 .social-icon-wrapper, .empty-cart-social {
     display: flex;

@@ -23,6 +23,7 @@ function targetGrow (event, target) {
         //target.style.backgroundColor = "black";
         target.style.backgroundColor = "rgb(130, 130, 130)";
         target.style.transform = "scale(1.05)";
+        target.style.color = "white";
     }
 };
 
@@ -31,6 +32,7 @@ function targetShrink (event, target) {
     target.style.opacity = "";
     target.style.backgroundColor = "";
     target.style.transform = "";
+    target.style.color = "";
 }
 
 export { buttonArr, targetGrow, targetShrink };

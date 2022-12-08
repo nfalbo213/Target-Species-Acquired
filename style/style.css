@@ -16,6 +16,9 @@ a, p, span, input, textarea, button, label {
     text-decoration: none;
     color: black;
 }
+button {
+    color: white;
+}
 h1, h2, h3, h4 {
     font-family: /*'Roboto Condensed',*/ 'Roboto', sans-serif;
 }
