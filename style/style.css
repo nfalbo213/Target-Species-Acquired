@@ -16,9 +16,6 @@ a, p, span, input, textarea, button, label, ul, li {
     text-decoration: none;
     color: black;
 }
-button {
-    color: white;
-}
 h1, h2, h3, h4 {
     font-family: /*'Roboto Condensed',*/ 'Roboto', sans-serif;
 }
@@ -69,16 +66,17 @@ nav li {
     display: inline-block;
 }
 .nav-link {
-    /*transition: .15s;*/
+    transition: .15s;
     text-decoration: none;
     cursor: pointer;
+    font-size: 125%;
+}
+.nav-button {
     background-color: #FFFFFF;
     color: black;
     border: none;
     padding: 0;
     margin: 0;
-    font-size: 125%;
-
 }
 .mobile-nav-list {
     display: none;
@@ -243,6 +241,7 @@ h1 span {
     border-width: 0px;
     /*background-color: rgb(130, 130, 130);*/
     background-color: black;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,7 +249,6 @@ h1 span {
     cursor: pointer;
     text-decoration: none;
     font-size: medium;
-    color: white;
     opacity: .8;
 }
 .shop-bttn-link-wrap {
@@ -348,6 +346,7 @@ h1 span {
     font-size: medium;
     /*background-color: rgb(130, 130, 130);*/
     background-color: black;
+    color: white;
     border: 0;
     display: flex;
     justify-content: center;
@@ -355,7 +354,6 @@ h1 span {
     text-align: center;
     cursor: pointer;
     text-decoration: none;
-    color: white;
 }
 .ten-plus-order {
     margin-top: 3%;
