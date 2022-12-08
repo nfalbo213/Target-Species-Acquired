@@ -13,7 +13,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 
 ////////////////
 // Imports
-import { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
+import { hamburger, navLinkArr, setSectionPadding, navHeightSet, burgerSpin, navLink } from "./mobileNavBar.js";
 import { setHomeSize } from "./homeDisplay.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { form, handleSubmit } from "./contact.js";
@@ -51,30 +51,12 @@ hamburger.onclick = (event) => {
     burgerSpin();
 }
 // When mobile nav menu item clicked
-navZero.onclick = (event) => {
-    event.preventDefault();
-    navObject.navButtonClicked = true;
-    burgerSpin();
-    window.location.replace("#home");
-}
-navOne.onclick = (event) => {
-    event.preventDefault();
-    navObject.navButtonClicked = true;
-    burgerSpin();
-    window.location.replace("#shop");
-}
-navTwo.onclick = (event) => {
-    event.preventDefault();
-    navObject.navButtonClicked = true;
-    burgerSpin();
-    window.location.replace("#about");
-}
-navThree.onclick = (event) => {
-    event.preventDefault();
-    navObject.navButtonClicked = true;
-    burgerSpin();
-    window.location.replace("#contact");
-}
+navLinkArr.forEach(target => {
+    target.addEventListener('click', (event) => {
+        event.preventDefault();
+        navLink(target);
+    })
+})
 
 // BUTTONS /////////////////////////
 multiOrdBttnArr.forEach(target => {

@@ -26,6 +26,7 @@ const navZero = document.getElementById('nav0');
 const navOne = document.getElementById('nav1');
 const navTwo = document.getElementById('nav2');
 const navThree = document.getElementById('nav3');
+const navArr = document.querySelectorAll('.nav-button');
 let navObject = {hamburgerClicked: false, navButtonClicked: false, largeHeight: true, isScrolling: true};
 const navLinkArr = document.querySelectorAll('.nav-link');
 
@@ -101,6 +102,28 @@ const checkIfNavButton = () => {
 /////////////////////////
 // Exported Functions
 // Invoked in main.js
+const navLink = (target) => {
+    if (target.id === 'nav0') {
+        navObject.navButtonClicked = true;
+        burgerSpin();
+        window.location.replace("./index.html#home");
+    }
+    if (target.id === 'nav1') {
+        navObject.navButtonClicked = true;
+        burgerSpin();
+        window.location.replace("./index.html#shop");
+    }
+    if (target.id === 'nav2') {
+        navObject.navButtonClicked = true;
+        burgerSpin();
+        window.location.replace("./index.html#about");
+    }
+    if (target.id === 'nav3') {
+        navObject.navButtonClicked = true;
+        burgerSpin();
+        window.location.replace("./index.html#contact");
+    }
+}
 const navHeightSet = () => {
     let width = window.innerWidth;
     if (width >= 600) {
@@ -154,4 +177,4 @@ function burgerSpin() {
 
 ////////////////////////
 // Exports
-export { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, setSectionPadding, navHeightSet, burgerSpin };
+export { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, navLink, setSectionPadding, navHeightSet, burgerSpin };

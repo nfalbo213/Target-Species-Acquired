@@ -13,7 +13,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 
 ////////////////
 // Imports
-import { hamburger, navZero, navOne, navTwo, navThree, navObject, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
+import { hamburger, navLinkArr, navLink, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { checkInventory } from "../backend/stockCheck.js";
 import { findLocalItems } from "./calculateCart.js"
@@ -51,30 +51,12 @@ hamburger.onclick = (event) => {
     burgerSpin();
 }
 // When mobile nav menu item clicked
-navZero.onclick = (event) => {
-    event.preventDefault();
-    navObject.navButtonClicked = true;
-    burgerSpin();
-    window.location.replace("./index.html#home");
-}
-navOne.onclick = (event) => {
-    event.preventDefault();
-    navObject.navButtonClicked = true;
-    burgerSpin();
-    window.location.replace("./index.html#shop");
-}
-navTwo.onclick = (event) => {
-    event.preventDefault();
-    navObject.navButtonClicked = true;
-    burgerSpin();
-    window.location.replace("./index.html#about");
-}
-navThree.onclick = (event) => {
-    event.preventDefault();
-    navObject.navButtonClicked = true;
-    burgerSpin();
-    window.location.replace("./index.html#contact");
-}
+navLinkArr.forEach(target => {
+    target.addEventListener('click', (event) => {
+        event.preventDefault();
+        navLink(target);
+    })
+})
 
 // BUTTONS /////////////////////////
 itmbttnArr.forEach(function(target) {
