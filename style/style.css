@@ -19,6 +19,12 @@ a, p, span, input, textarea, button, label, ul, li {
 h1, h2, h3, h4 {
     font-family: /*'Roboto Condensed',*/ 'Roboto', sans-serif;
 }
+h2, h4 {
+    margin-block-end: 0;
+}
+h4 {
+    text-align: center;
+}
 .button-class {
     -webkit-transform: scale(1);
     transform: scale(1);
