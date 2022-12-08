@@ -11,7 +11,7 @@ html {
 body {
     margin: 0 auto;
 }
-a, p, span, input, textarea, button, label {
+a, p, span, input, textarea, button, label, ul, li {
     font-family: 'Roboto Condensed', 'Roboto', sans-serif;
     text-decoration: none;
     color: black;
@@ -72,6 +72,13 @@ nav li {
     /*transition: .15s;*/
     text-decoration: none;
     cursor: pointer;
+    background-color: #FFFFFF;
+    color: black;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 125%;
+
 }
 .mobile-nav-list {
     display: none;

@@ -33,10 +33,10 @@ SPDX-License-Identifier: Apache-2.0
 
                 <!-- Mobile Navigation List -->
                 <ul id="mobile-nav-list" class="mobile-nav-list">
-                    <li id="nav0" class="nav-link button-class"><a>Home</a></li>
-                    <li id="nav1" class="nav-link button-class"><a>Shop</a></li>
-                    <li id="nav2" class="nav-link button-class"><a>About</a></li>
-                    <li id="nav3" class="nav-link button-class"><a>Contact</a></li>
+                    <li><button id="nav0" class="nav-link button-class" role="link" aria-roledescription="Navigation link to Home section">Home</button></li>
+                    <li><button id="nav1" class="nav-link button-class" role="link" aria-roledescription="Navigation link to Shop section">Shop</button></li>
+                    <li><button id="nav2" class="nav-link button-class" role="link" aria-roledescription="Navigation link to About section">About</button></li>
+                    <li><button id="nav3" class="nav-link button-class" role="link" aria-roledescription="Navigation link to Contact section">Contact</button></li>
                     
                     <div class="social-nav-wrapper">
                         
@@ -78,10 +78,10 @@ SPDX-License-Identifier: Apache-2.0
 
                 <!-- Desktop Navigation List -->
                 <ul class="nav-list">
-                    <li><a class="nav-link button-class" href="#home">Home</a></li>
-                    <li><a class="nav-link button-class" href="#shop">Shop</a></li>
-                    <li><a class="nav-link button-class" href="#about">About</a></li>
-                    <li><a class="nav-link button-class" href="#contact">Contact</a></li>
+                    <li><a class="nav-link button-class" href="#home" role="link" aria-roledescription="Navigation link to Home section">Home</a></li>
+                    <li><a class="nav-link button-class" href="#shop" role="link" aria-roledescription="Navigation link to Shop section">Shop</a></li>
+                    <li><a class="nav-link button-class" href="#about" role="link" aria-roledescription="Navigation link to About section">About</a></li>
+                    <li><a class="nav-link button-class" href="#contact" role="link" aria-roledescription="Navigation link to Contact section">Contact</a></li>
                 </ul>
 
                 <!-- Wrapper to keep cart and burger together while allowing for drop down to stay centered -->
@@ -208,7 +208,13 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item0" class="product-item">
                             <img class="item-img" src="./style/images/bluegill.jpg" alt="">
                             <h4>Flatside plopper 90mm - Natural Born Giller</h4>
-                            <p>Floating, topwater, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz</p>
+                            <!--<p>Floating, topwater, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz</p>-->
+                            <ul>
+                                <li>Floating/Topwater</li>
+                                <li>Size 4 round bend Gamakatsu treble hooks</li>
+                                <li>Spro power split rings</li>
+                                <li>Weight: 1/2 oz</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="flatNatBornGiller" data-name="Flatside plopper 90mm - Natural Born Giller">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -231,7 +237,14 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item1" class="product-item">
                             <img class="item-img" src="./style/images/bluegill-squarebill.jpg" alt="">
                             <h4>S-Crank Alternative Squarebill - Natural Born Giller</h4>
-                            <p>Dives 2-4 feet, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz Length 2-1/2"</p>
+                            <!--<p>Dives 2-4 feet, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz Length 2-1/2"</p>-->
+                            <ul>
+                                <li>Dives 2-4 feet</li>
+                                <li>Size 4 round bend Gamakatsu treble hooks</li>
+                                <li>Spro power split rings</li>
+                                <li>Weight: 1/2 oz</li>
+                                <li>Length: 2-1/2"</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="crankNatBornGiller" data-name="S-Crank Alternative Squarebill - Natural Born Giller">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -254,7 +267,14 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item2" class="product-item">
                             <img class="item-img" src="./style/images/c_invertED_NatBornGiller.jpeg" alt="">
                             <h4>Inverted - Natural Born Giller</h4>
-                            <p>Dives 2-4 feet, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz Length 2-1/2”</p>
+                            <!--<p>Dives 2-4 feet, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz Length 2-1/2”</p>-->
+                            <ul>
+                                <li>Dives 2-4 feet</li>
+                                <li>Size 4 round bend Gamakatsu treble hooks</li>
+                                <li>Spro power split rings</li>
+                                <li>Weight: 1/2 oz</li>
+                                <li>Length: 2-1/2"</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="invertNatBornGiller" data-name="Inverted - Natural Born Giller">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -276,7 +296,14 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item3" class="product-item">
                             <img class="item-img" src="./style/images/fire-craw.jpg" alt="">
                             <h4>S-Crank Alternative Squarebill - Fire Craw</h4>
-                            <p>Dives 2-4 feet, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz Length 2-1/2"</p>
+                            <!--<p>Dives 2-4 feet, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz Length 2-1/2"</p>-->
+                            <ul>
+                                <li>Dives 2-4 feet</li>
+                                <li>Size 4 round bend Gamakatsu treble hooks</li>
+                                <li>Spro power split rings</li>
+                                <li>Weight: 1/2 oz</li>
+                                <li>Length: 2-1/2"</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="fireCraw" data-name="S-Crank Alternative Squarebill - Fire Craw">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -298,7 +325,13 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item4" class="product-item">
                             <img class="item-img" src="./style/images/Golden-Shad.jpg" alt="">
                             <h4>Flatside plopper 90mm - Gold Shad</h4>
-                            <p>Floating, topwater, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz</p>
+                            <!--<p>Floating, topwater, size 4 round bend Gamakatsu treble hooks, Spro power split rings, 1/2 oz</p>-->
+                            <ul>
+                                <li>Floating/Topwater</li>
+                                <li>Size 4 round bend Gamakatsu treble hooks</li>
+                                <li>Spro power split rings</li>
+                                <li>Weight: 1/2 oz</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="goldenShad" data-name="Flatside plopper 90mm - Gold Shad">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -320,7 +353,10 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item5" class="product-item">
                             <img class="item-img" src="./style/images/Pickleback.jpg" alt="">
                             <h4>Pickleback Lure</h4>
-                            <p>Best damn pickleback lure you'll ever use</p>
+                            <!--<p>Best damn pickleback lure you'll ever use</p>-->
+                            <ul>
+                                <li>Best damn pickleback lure you'll ever use</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="pickleback" data-name="Pickleback Lure">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -342,7 +378,10 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item6" class="product-item">
                             <img class="item-img" src="./style/images/rainbow-trout-swimbait.jpg" alt="">
                             <h4>Rainbow Trout Swim Lure</h4>
-                            <p>Best damn rainbow trout swim lure you'll ever use</p>
+                            <!--<p>Best damn rainbow trout swim lure you'll ever use</p>-->
+                            <ul>
+                                <li>Best damn rainbow trout swim lure you'll ever use</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="rainbowTroutSwim" data-name="Rainbow Trout Swim Lure">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -364,7 +403,16 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item7" class="product-item">
                             <img class="item-img" src="./style/images/c_Ian_M450.jpeg" alt="">
                             <h4>M450 Lure</h4>
-                            <p>Named by/after long time customer, Ian. Alternative to Lucky Craft LC dives 6-8ft size 6 round bend Gamakatsu treble hooks, Spro power split rings, 1/2oz Length 2-1/2”</p>
+                            <!--<p>Named by/after long time customer, Ian. Alternative to Lucky Craft LC dives 6-8ft size 6 round bend Gamakatsu treble hooks, Spro power split rings, 1/2oz Length 2-1/2”</p>-->
+                            <ul>
+                                <li>Named by/after long-time customer, Ian</li>
+                                <li>Alternative to Lucky Craft LC</li>
+                                <li>Dives 6-8 feet</li>
+                                <li>Size 6 round bend Gamakatsu treble hooks</li>
+                                <li>Spro power split rings</li>
+                                <li>Weight: 1/2 oz</li>
+                                <li>Length: 2-1/2"</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="m450" data-name="M450 Lure">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -386,7 +434,11 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item8" class="product-item">
                             <img class="item-img" src="./style/images/c_TSA_Koozie.jpeg" alt="">
                             <h4>TSA Koozie</h4>
-                            <p>Keeps your beer (or your soda) cold.</p>
+                            <!--<p>Keeps your beer (or your soda) cold.</p>-->
+                            <ul>
+                                <li>Keeps your beer (or your soda) cold</li>
+                                <li>Black and white colorway</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="tsaKoozie" data-name="TSA Koozie">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -405,7 +457,12 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item9" class="product-item">
                             <img class="item-img" src="./style/images/c_TSA_hat_black_grey.jpeg" alt="">
                             <h4>TSA Trucker Hat (Black on Grey)</h4>
-                            <p>Keeps the sun out your eyes while you're on the water. Snapback adjustable (One size fits most). Black on grey colorway.</p>
+                            <!--<p>Keeps the sun out your eyes while you're on the water. Snapback adjustable (One size fits most). Black on grey colorway.</p>-->
+                            <ul>
+                                <li>Keeps the sun out your eyes while you're on the water</li>
+                                <li>Snapback adjustable (One size fits most)</li>
+                                <li>Black on grey colorway</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="tsaHatBlack" data-name="TSA Trucker Hat (Black on Grey)">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -424,7 +481,15 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item10" class="product-item">
                             <img class="item-img" src="./style/images/c_TSA_hat_black_yellow.jpeg" alt="">
                             <h4>TSA Trucker Hat (Black on Yellow)</h4>
-                            <p>Keeps the sun out your eyes while you're on the water. Snapback adjustable (One size fits most). Black on yellow colorway.</p>
+                            <!--<p>Keeps the sun out your eyes while you're on the water. Snapback adjustable (One size fits most). Black on yellow colorway.</p>-->
+                            <ul>
+                                <li>Keeps the sun out your eyes while you're on the water</li>
+                                <li>Snapback adjustable (One size fits most)</li>
+                                <li>Black on yellow colorway</li>
+                            </ul>
+                            <!--<span>Keeps the sun out your eyes while you're on the water</span>
+                            <span>Snapback adjustable (One size fits most)</span>
+                            <span>Black on yellow colorway</span>-->
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="tsaHatBlackYellow" data-name="TSA Trucker Hat (Black on Yellow)">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -443,7 +508,12 @@ SPDX-License-Identifier: Apache-2.0
                         <div id="item11" class="product-item">
                             <img class="item-img" src="./style/images/c_TSA_hat_blue_white.jpeg" alt="">
                             <h4>TSA Trucker Hat (Blue, White, and Grey)</h4>
-                            <p>Keeps the sun out your eyes while you're on the water. Snapback adjustable (One size fits most). Blue, White, and Grey colorway.</p>
+                            <!--<p>Keeps the sun out your eyes while you're on the water. Snapback adjustable (One size fits most). Blue, White, and Grey colorway.</p>-->
+                            <ul>
+                                <li>Keeps the sun out your eyes while you're on the water</li>
+                                <li>Snapback adjustable (One size fits most)</li>
+                                <li>Blue, white, and grey colorway</li>
+                            </ul>
                             <!-- List if item in stock -->
                             <a id="" class="inventory" data-prod="tsaHatBlue" data-name="TSA Trucker Hat (Blue, White, and Grey)">'x' left in stock (Refresh Page to Update)</a>
                             <!-- Number input only: **READ** Possibly link number of options to number left in stock when page loads -->
@@ -481,11 +551,11 @@ SPDX-License-Identifier: Apache-2.0
             <section id="contact" class="contact-wrapper section-class">
                 
                 <h2>Contact</h2>
-                <h3>Want to talk fishing?  Have an old crankbait color or style you can't find anymore and would like us to bring it back to life? </h3>
+                <h3>Reach Out</h3>
 
                 <div class="contact-container">
 
-                    <!--<p class="contact-banner"><b>Want to talk fishing?  Have an old crankbait color or style you can't find anymore and would like us to bring it back to life? </b></p>-->
+                    <p class="contact-banner"><b>Want to talk fishing?  Have an old crankbait color or style you can't find anymore and would like us to bring it back to life? </b></p>
                     <p>Drop us a line and we can work with you on any custom color combination you can think of.</p>
 
                     <div class="bottom-contact-wrapper">

@@ -1,8 +1,5 @@
 import { clearCart } from "./clearCart.js";
 import { checkLocalStorage } from "./checkOut.js";
-//import { baseUrl } from "../backend/stockCheck.js";
-
-//import { warehouseObj, getWarehouse, postWarehouse } from "./updateWarehouse.js";
 
 //const baseUrl = 'http://localhost:3000';
 const baseUrl = 'https://target-species-acquired.herokuapp.com';
@@ -43,7 +40,6 @@ paypal.Buttons({
           return actions.resolve();
     },
     onApprove: function(data, actions) {
-
         return actions.order.capture()
         .then(function(details) {
             localStorage.setItem('payer-name', `${details.payer.name.given_name}`)
