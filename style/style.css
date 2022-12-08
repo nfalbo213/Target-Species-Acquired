@@ -228,7 +228,6 @@ h1 span {
     color: white;
 }
 .shop-button {
-    margin-top: 5%;
     position: relative;
     z-index: 5;
     height: 50px;
@@ -247,9 +246,11 @@ h1 span {
     color: white;
     opacity: .8;
 }
-
+.shop-bttn-link-wrap {
+    margin-top: 5%;
+}
 @media screen and (max-width: 600px) {
-    .shop-button {
+    .shop-bttn-link-wrap {
         margin-top: 20%;
     }
 }
