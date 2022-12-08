@@ -51,25 +51,25 @@ hamburger.onclick = (event) => {
     burgerSpin();
 }
 // When mobile nav menu item clicked
-navZero.onpointerup = (event) => {
+navZero.onclick = (event) => {
     event.preventDefault();
     navObject.navButtonClicked = true;
     burgerSpin();
     window.location.replace("#home");
 }
-navOne.onpointerup = (event) => {
+navOne.onclick = (event) => {
     event.preventDefault();
     navObject.navButtonClicked = true;
     burgerSpin();
     window.location.replace("#shop");
 }
-navTwo.onpointerup = (event) => {
+navTwo.onclick = (event) => {
     event.preventDefault();
     navObject.navButtonClicked = true;
     burgerSpin();
     window.location.replace("#about");
 }
-navThree.onpointerup = (event) => {
+navThree.onclick = (event) => {
     event.preventDefault();
     navObject.navButtonClicked = true;
     burgerSpin();
