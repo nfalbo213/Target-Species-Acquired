@@ -46,7 +46,7 @@ window.addEventListener ('resize', (event) => {
 // MOBILE NAVBAR /////////////////////////
 
 // When mobile nav menu hamburger icon is clicked
-hamburger.onmousedown = (event) => {  
+hamburger.onclick = (event) => {  
     event.preventDefault();
     burgerSpin();
 }
