@@ -425,8 +425,8 @@ h1 span {
 }
 
 .contact-label {
-    color: white;
-    font-size: xx-small;
+    color: black;
+    font-size: medium;
 }
 .social-wrapper {
     width: 50%;
