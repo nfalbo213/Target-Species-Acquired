@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin: 0;
+    text-align: center;
 }
 #cart-text {
     display: none;
