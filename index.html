@@ -570,14 +570,26 @@ SPDX-License-Identifier: Apache-2.0
                     
                     <form id="contact-form" class="contact-form" title="Contact Form" data-uid="mgeqobag">
                     
-                    <label class="contact-label" label="email">Email*</label>
+                        <label class="contact-label">
+                            Email*
+                            <input class="contact-input" type="email" name="email" placeholder="YourEmail@Example.com*" aria-placeholder="YourEmail@Example.com*" required><br>
+                        </label>
+                        <label class="contact-label">
+                            Phone
+                            <input class="contact-input" type="tel" name="phone" placeholder="Phone: 555-555-5555" aria-placeholder="Phone: 555-555-5555"><br>
+                        </label>
+                        <label class="contact-label">
+                            Message*
+                            <textarea id="contact-text" class="contact-message" type="textarea" name="message" placeholder="Your Message*" aria-placeholder="Your Message*" required></textarea><br>
+                        </label>
+                    <!-- <label class="contact-label" label="email">Email*</label>
                     <input class="contact-input" label="email" type="email" name="email" placeholder="Email*" required><br>
                     <label class="contact-label" label="phone">Phone</label>
                     <input class="contact-input" label="phone" type="tel" name="phone" placeholder="Phone: 555-555-5555"><br>
-                    <label class="contact-label" label="message">Your Message*</label>
-                    <textarea id="contact-text" class="contact-message" label="message" name="message" placeholder="Your Message*" required></textarea>
-                    <p id="form-status"></p>
-                    <button id="send-button" class="email-button button-class" type="submit">Send Email</button><br>
+                    <label class="contact-label" label="message">Message*</label>
+                    <textarea id="contact-text" class="contact-message" label="message" name="message" placeholder="Your Message*" required></textarea> -->
+                        <p id="form-status"></p>
+                        <button id="send-button" class="email-button button-class" type="submit">Send Email</button><br>
 
                     </form>
 

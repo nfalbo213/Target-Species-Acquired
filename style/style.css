@@ -478,8 +478,11 @@ h1 span {
 }
 
 .contact-label {
+    display: flex;
+    flex-direction: column;
     color: black;
     font-size: medium;
+    width: 100%;
 }
 .social-wrapper {
     width: 50%;
