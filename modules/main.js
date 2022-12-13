@@ -13,7 +13,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 
 ////////////////
 // Imports
-import { hamburger, navLinkArr, setSectionPadding, navHeightSet, burgerSpin, navLink } from "./mobileNavBar.js";
+import { hamburger, navLinkArr, navMobileArr, setSectionPadding, navHeightSet, burgerSpin, navLink } from "./mobileNavBar.js";
 import { setHomeSize } from "./homeDisplay.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { form, handleSubmit } from "./contact.js";
@@ -51,7 +51,7 @@ hamburger.onclick = (event) => {
     burgerSpin();
 }
 // When mobile nav menu item clicked
-navLinkArr.forEach(target => {
+navMobileArr.forEach(target => {
     target.addEventListener('click', (event) => {
         event.preventDefault();
         navLink(target);
@@ -61,6 +61,7 @@ navLinkArr.forEach(target => {
 // BUTTONS /////////////////////////
 multiOrdBttnArr.forEach(target => {
     target.addEventListener('click', (event) => {
+        event.preventDefault();
         multiOrdBttnMessage(target);
         window.location.replace("#contact");
     });

@@ -26,7 +26,7 @@ const navZero = document.getElementById('nav0');
 const navOne = document.getElementById('nav1');
 const navTwo = document.getElementById('nav2');
 const navThree = document.getElementById('nav3');
-const navArr = document.querySelectorAll('.nav-button');
+const navMobileArr = document.querySelectorAll('.nav-button');
 let navObject = {hamburgerClicked: false, navButtonClicked: false, largeHeight: true, isScrolling: true};
 const navLinkArr = document.querySelectorAll('.nav-link');
 
@@ -122,6 +122,8 @@ const navLink = (target) => {
         navObject.navButtonClicked = true;
         burgerSpin();
         window.location.replace("./index.html#contact");
+    } else {
+        return;
     }
 }
 const navHeightSet = () => {
@@ -177,4 +179,4 @@ function burgerSpin() {
 
 ////////////////////////
 // Exports
-export { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, navLink, setSectionPadding, navHeightSet, burgerSpin };
+export { hamburger, navZero, navOne, navTwo, navThree, navObject, navLinkArr, navMobileArr, navLink, setSectionPadding, navHeightSet, burgerSpin };

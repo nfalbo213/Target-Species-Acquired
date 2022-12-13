@@ -13,7 +13,7 @@ Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 
 ////////////////
 // Imports
-import { hamburger, navLinkArr, navLink, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
+import { hamburger, navLinkArr, navMobileArr, navLink, setSectionPadding, navHeightSet, burgerSpin } from "./mobileNavBar.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { checkInventory } from "../backend/stockCheck.js";
 import { findLocalItems } from "./calculateCart.js"
@@ -51,7 +51,7 @@ hamburger.onclick = (event) => {
     burgerSpin();
 }
 // When mobile nav menu item clicked
-navLinkArr.forEach(target => {
+navMobileArr.forEach(target => {
     target.addEventListener('click', (event) => {
         event.preventDefault();
         navLink(target);
