@@ -352,6 +352,19 @@ h1 span {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+.mobile-span {
+    display: none;
+    height: 1px;
+    background-color: rgb(130, 130, 130);
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    .mobile-span {
+        display: block;
+    }
+}
+
 .product-item {
     /*height: 800px;*/
     display: flex;
