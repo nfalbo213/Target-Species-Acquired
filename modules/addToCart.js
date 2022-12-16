@@ -23,6 +23,7 @@ const updateBttnTxt = (target) => {
         if (`${targ.dataset.prod}` === `${target.item}`) {
             //targ.textContent = 'Update Cart';
             buttonMessage(targ);
+            cartUpdateDisplay(targ);
         };
     });
 };
@@ -92,6 +93,19 @@ function itemToCart(event, target) {
 function buttonMessage(target) {
     target.textContent = 'Update Cart';
 }
+
+const cartUpdateDisplay = (target) => {
+    const cartUpdateArr = document.querySelectorAll('.cart-update');
+    cartUpdateArr.forEach((targ) => {
+        if (target.dataset.prod === targ.dataset.prod) {
+            targ.style.display = 'block';
+            targ.style.color = 'green';
+            targ.textContent = 'Item added to cart'
+        } else {
+            return;
+        };
+    });
+};
 /*
 itmbttnArr.forEach(function(target) {
     target.addEventListener('click', (event) => {
@@ -124,4 +138,4 @@ const specialOrderMessage = (target) => {
     contactText.textContent = `Hi - I'm [🙋🏻‍♂️ YOUR NAME HERE], and I'd like to special order a ${target.dataset.name}!`;
 }
 
-export { optionArr, itmbttnArr, findCartAmount, buttonMessage, itemToCart, specialOrderMessage, multiOrdBttnMessage, setCart };
+export { optionArr, itmbttnArr, findCartAmount, buttonMessage, cartUpdateDisplay, itemToCart, specialOrderMessage, multiOrdBttnMessage, setCart };

@@ -35,8 +35,8 @@ const updateWarehouse = (jsonResponse) => {
         let bluegillSquareStock
         let fireCrawStock
         let goldenShadStock
-        let picklebackStock
-        let rainbowTroutSwimStock
+        let picklebackMediumStock
+        let solarfallStock
         const loop = (obj) => { 
           for (let i = obj.items.length - 1; i >= 0; i--) {
             console.log(obj.items[i].id)
@@ -53,10 +53,10 @@ const updateWarehouse = (jsonResponse) => {
               goldenShadQty = goldenShadStock - obj.items[i].quantity
             }
             if (obj.items[i].id === 5) {
-              picklebackQty = picklebackStock - obj.items[i].quantity
+              picklebackMediumQty = picklebackMediumStock - obj.items[i].quantity
             }
             if (obj.items[i].id === 6) {
-              rainbowTroutSwimQty = rainbowTroutSwimStock - obj.items[i].quantity
+              solarfallQty = solarfallStock - obj.items[i].quantity
             }   
           }
         }
@@ -76,11 +76,11 @@ const updateWarehouse = (jsonResponse) => {
               if (key === "goldenShad") {
                 goldenShadStock = jsonRes[key]
               }
-              if (key === "pickleback") {
-                picklebackStock = jsonRes[key]
+              if (key === "picklebackMedium") {
+                picklebackMediumStock = jsonRes[key]
               }
-              if (key === "rainbowTroutSwim") {
-                rainbowTroutSwimStock = jsonRes[key]
+              if (key === "solarfall") {
+                solarfallStock = jsonRes[key]
               }
             }
     
@@ -90,15 +90,15 @@ const updateWarehouse = (jsonResponse) => {
         let bluegillSquareQty
         let fireCrawQty
         let goldenShadQty
-        let picklebackQty
-        let rainbowTroutSwimQty
+        let picklebackMediumQty
+        let solarfallQty
         const adjustWarehouse = () => {
             bluegillQty = bluegillStock
             bluegillSquareQty = bluegillSquareStock
             fireCrawQty = fireCrawStock
             goldenShadQty = goldenShadStock
-            picklebackQty = picklebackStock
-            rainbowTroutSwimQty = rainbowTroutSwimStock
+            picklebackMediumQty = picklebackMediumStock
+            solarfallQty = solarfallStock
         }
         // Adjusted Warehouse Levels - assigned to warehouseObj
         //let warehouseObj
@@ -121,14 +121,14 @@ const updateWarehouse = (jsonResponse) => {
                     goldenShadQty = goldenShadStock - element.quantity
                 }
                 if (element.id === 5) {
-                    picklebackQty = picklebackStock - element.quantity
+                    picklebackMediumQty = picklebackMediumStock - element.quantity
                 }
                 if (element.id === 6) {
-                    rainbowTroutSwimQty = rainbowTroutSwimStock - element.quantity
+                    solarfallQty = solarfallStock - element.quantity
                 }  
             })*/
             loop(checkLocalStorage());
-            warehouseObjecty = {bluegill: bluegillQty, bluegillSquare: bluegillSquareQty, fireCraw: fireCrawQty, goldenShad: goldenShadQty, pickleback: picklebackQty, rainbowTroutSwim: rainbowTroutSwimQty}
+            warehouseObjecty = {bluegill: bluegillQty, bluegillSquare: bluegillSquareQty, fireCraw: fireCrawQty, goldenShad: goldenShadQty, picklebackMedium: picklebackMediumQty, solarfall: solarfallQty}
             //console.log(warehouseObj)
         }
 

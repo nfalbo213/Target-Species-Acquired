@@ -31,10 +31,10 @@ const getItemIdNum = (parsedObj) => {
     if (parsedObj.item === "goldenShad") {
         return 4;
     }
-    if (parsedObj.item === "pickleback") {
+    if (parsedObj.item === "picklebackMedium") {
         return 5;
     }
-    if (parsedObj.item === "rainbowTroutSwim") {
+    if (parsedObj.item === "solarfall") {
         return 6;
     }
     if (parsedObj.item === "m450") {
@@ -54,6 +54,9 @@ const getItemIdNum = (parsedObj) => {
     }
     if (parsedObj.item === "tsaHatBlue") {
         return 12;
+    }
+    if (parsedObj.item === "picklebackFlat") {
+        return 13;
     }
 
 }

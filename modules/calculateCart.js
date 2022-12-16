@@ -96,14 +96,20 @@ const calculateTotal = (itemArr) => {
             displayOrderDetails(target, num);
             cartArr.push(1)
         }
-        if (target.item === "pickleback") {
+        if (target.item === "picklebackMedium") {
+            num = 16;
+            total += target.qty * num;
+            displayOrderDetails(target, num);
+            cartArr.push(1)
+        }
+        if (target.item === "picklebackFlat") {
             num = 20;
             total += target.qty * num;
             displayOrderDetails(target, num);
             cartArr.push(1)
         }
-        if (target.item === "rainbowTroutSwim") {
-            num = 22;
+        if (target.item === "solarfall") {
+            num = 16;
             total += target.qty * num;
             displayOrderDetails(target, num);
             cartArr.push(1)

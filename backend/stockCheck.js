@@ -110,20 +110,20 @@ const renderJsonResponse = (res) => {
         setOptions(key, rawJson.goldenShad);
         setItemButtons(key, rawJson.goldenShad);
       }
-      if (key === "pickleback") {
-        setInventory(key, rawJson.pickleback);
-        setOptions(key, rawJson.pickleback);
-        setItemButtons(key, rawJson.pickleback);
+      if (key === "picklebackMedium") {
+        setInventory(key, rawJson.picklebackMedium);
+        setOptions(key, rawJson.picklebackMedium);
+        setItemButtons(key, rawJson.picklebackMedium);
       }
-      if (key === "rainbowTroutSwim") {
-        setInventory(key, rawJson.rainbowTroutSwim);
-        setOptions(key, rawJson.rainbowTroutSwim);
-        setItemButtons(key, rawJson.rainbowTroutSwim);
+      if (key === "solarfall") {
+        setInventory(key, rawJson.solarfall);
+        setOptions(key, rawJson.solarfall);
+        setItemButtons(key, rawJson.solarfall);
       }
       if (key === "m450") {
-        setInventory(key, rawJson.rainbowTroutSwim);
-        setOptions(key, rawJson.rainbowTroutSwim);
-        setItemButtons(key, rawJson.rainbowTroutSwim);
+        setInventory(key, rawJson.solarfall);
+        setOptions(key, rawJson.solarfall);
+        setItemButtons(key, rawJson.solarfall);
       }
       //console.log(rawJson);
       /*

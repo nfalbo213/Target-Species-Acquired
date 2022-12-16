@@ -17,7 +17,7 @@ import { hamburger, navLinkArr, navMobileArr, setSectionPadding, navHeightSet, b
 import { setHomeSize } from "./homeDisplay.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { form, handleSubmit } from "./contact.js";
-import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage, multiOrdBttnMessage } from "./addToCart.js";
+import { itmbttnArr, buttonMessage, cartUpdateDisplay, itemToCart, specialOrderMessage, multiOrdBttnMessage } from "./addToCart.js";
 import { createOptions } from "./renderOptions.js";
 // **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
 //import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
@@ -75,6 +75,7 @@ itmbttnArr.forEach(target => {
         } else {
             itemToCart(event, target);
             buttonMessage(target);
+            cartUpdateDisplay(target);
             alert('Cart Updated!');
         }
     });

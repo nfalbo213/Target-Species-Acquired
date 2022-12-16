@@ -401,6 +401,10 @@ h1 span {
 .inventory {
     display: none;
 }
+.cart-update {
+    display: none;
+    text-align: center;
+}
 .add-item-button, .ten-plus-order, .email-button { 
     height: 50px;
     width: 150px;
