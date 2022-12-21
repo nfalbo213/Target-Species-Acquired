@@ -199,13 +199,12 @@ nav li {
 .home-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     background-image: url("./images/bluegill.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    transition: 2s ease-in-out;
 }
 .home-text-wrapper {
     display: flex;
@@ -259,12 +258,55 @@ h1 span {
     font-size: medium;
     opacity: .8;
 }
+/*
 .shop-bttn-link-wrap {
     margin-top: 5%;
 }
+
 @media screen and (max-width: 600px) {
     .shop-bttn-link-wrap {
         margin-top: 20%;
+    }
+}
+*/
+.play-pause-button {
+    height: 50px;
+    width: 50px;
+    /*background-image: url('./images/play-pause-button.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: 0;
+    /*margin-top: 20%;*/
+    margin-left: 90%;
+
+}
+
+@media screen and (max-width: 600px) {
+    .play-pause-button {
+        /*margin-top: 10%;*/
+        margin-left: 0;
+        /*border-radius: 15px;
+        background-color: black;
+        opacity: .8;*/
+    }
+}
+
+.play-pause-img {
+    height: 100%;
+    width: 100%;
+}
+.mobile-play-pause {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .play-pause-img {
+        display: none;
+    }
+    .mobile-play-pause {
+        display: block;
     }
 }
 

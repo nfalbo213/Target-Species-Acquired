@@ -2,7 +2,9 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 const homeWrapper = document.getElementById("home-wrapper");
+const playPauseBttn = document.getElementById("play-pause-button");
 let imgNum = 0;
+let isPaused = false;
 
 const resetImgNum = (num) => {
     if (num === 4) {
@@ -13,6 +15,7 @@ const resetImgNum = (num) => {
 };
 
 const imageTransition = () => {
+    homeWrapper.style.transition = '2s ease-in-out';
     const imgArr = [
         "./style/images/new_firecraw.jpg",
         "./style/images/c_invertED_NatBornGiller.jpeg",
@@ -38,13 +41,24 @@ const imageTransition = () => {
     }
 };
 
+
+const setPlayPauseBttn = () => {
+    if (isPaused) {
+        isPaused = false;
+        animateHome();
+    } else if (!isPaused) {
+        isPaused = true;
+    }
+}
+
 const animateHome = () => {
     const timer = setInterval(() => {
-        /*if (isPaused) {
-            
-        }*/
+        if (isPaused) {
+            clearInterval(timer);
+            return;
+        }
         imageTransition();
     }, 5500);
 };
 
-export { animateHome };
+export { playPauseBttn, setPlayPauseBttn, animateHome };

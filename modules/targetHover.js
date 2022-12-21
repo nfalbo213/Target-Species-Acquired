@@ -16,7 +16,7 @@ const buttonArr = document.querySelectorAll('.button-class');
 // Exported Functions
 function targetGrow (event, target) {
     event.preventDefault;
-    if (target.id === "cart" || target.id === "instagram" || target.id === "facebook") {
+    if (target.id === "cart" || target.id === "instagram" || target.id === "facebook" || target.id === "play-pause-button") {
         target.style.opacity = "0.65";
         target.style.transform = "scale(1.15)";
     } else {

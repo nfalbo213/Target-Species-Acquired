@@ -27,6 +27,7 @@ function setHomeSize(isHomePage) {
         homeWrapper.style.height = `${checkHeight()-checkFooterHeight()}px`;
         homeWrapper.style.width = `${checkWidth()}px`;
     } else if (isHomePage) {
+        homeWrapper.style.transition = '0s';
         homeWrapper.style.height = `${checkHeight()}px`;
         homeWrapper.style.width = `${checkWidth()}px`;
     }  
