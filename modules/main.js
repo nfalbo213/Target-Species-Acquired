@@ -103,6 +103,7 @@ ariaHiddenArr.forEach(function(target) {
 
 form.addEventListener('submit', handleSubmit);
 
+
 // Testing
 /*emailButton.addEventListener('pointerover', (event) => {
     targetGrow(event, emailButton);
