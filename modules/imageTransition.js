@@ -47,4 +47,4 @@ const animateHome = () => {
     }, 5500);
 };
 
-animateHome();
+export { animateHome };

@@ -19,6 +19,7 @@ import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
 import { form, handleSubmit } from "./contact.js";
 import { itmbttnArr, buttonMessage, cartUpdateDisplay, itemToCart, specialOrderMessage, multiOrdBttnMessage } from "./addToCart.js";
 import { createOptions } from "./renderOptions.js";
+import { animateHome } from "./imageTransition.js";
 // **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
 //import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
 
@@ -103,6 +104,7 @@ ariaHiddenArr.forEach(function(target) {
 
 form.addEventListener('submit', handleSubmit);
 
+animateHome();
 
 // Testing
 /*emailButton.addEventListener('pointerover', (event) => {
