@@ -291,6 +291,8 @@ h1 span {
         /*border-radius: 15px;
         background-color: black;
         opacity: .8;*/
+        height: 45px;
+        width: 45px;
     }
 }
 
@@ -300,6 +302,7 @@ h1 span {
 }
 .mobile-play-pause {
     display: none;
+    opacity: .9;
 }
 
 @media screen and (max-width: 600px) {
@@ -308,6 +311,12 @@ h1 span {
     }
     .mobile-play-pause {
         display: block;
+    }
+    .pause-button-svg {
+        display: block;
+    }
+    .play-button-svg {
+        display: none;
     }
 }
 

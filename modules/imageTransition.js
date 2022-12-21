@@ -3,6 +3,9 @@ SPDX-License-Identifier: Apache-2.0 */
 
 const homeWrapper = document.getElementById("home-wrapper");
 const playPauseBttn = document.getElementById("play-pause-button");
+const playPauseImg = document.getElementById("play-pause-img");
+const playBttnMobile = document.getElementById("play-button-svg");
+const pauseBttnMobile = document.getElementById("pause-button-svg");
 let imgNum = 0;
 let isPaused = false;
 
@@ -41,23 +44,43 @@ const imageTransition = () => {
     }
 };
 
+const checkForMobile = (boolean) => {
+    let width = window.innerWidth;
+    if (width <= 600 && boolean) {
+        playBttnMobile.style.display = 'block';
+        pauseBttnMobile.style.display = 'none';
+    }
+    if (width <= 600 && !boolean) {
+        playBttnMobile.style.display = 'none';
+        pauseBttnMobile.style.display = 'block';
+    }
+    if (width > 600 && boolean) {
+        playPauseImg.src = "./style/images/play-button.png";
+    }
+    if (width > 600 && !boolean) {
+        playPauseImg.src = "./style/images/pause-button.png";
+    }
+    return;
+};
 
 const setPlayPauseBttn = () => {
     if (isPaused) {
         isPaused = false;
-        animateHome();
+        checkForMobile(false);
     } else if (!isPaused) {
         isPaused = true;
+        checkForMobile(true);
     }
 }
 
 const animateHome = () => {
     const timer = setInterval(() => {
         if (isPaused) {
-            clearInterval(timer);
             return;
         }
-        imageTransition();
+        else {
+            imageTransition();
+        }
     }, 5500);
 };
 
