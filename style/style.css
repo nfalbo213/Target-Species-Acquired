@@ -280,7 +280,7 @@ h1 span {
     background-color: transparent;
     border: 0;
     margin-left: 90%;
-
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
@@ -302,6 +302,7 @@ h1 span {
 .mobile-play-pause {
     display: none;
     opacity: .9;
+    /*padding-top: 10%;*/
 }
 
 @media screen and (max-width: 600px) {
