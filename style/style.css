@@ -16,7 +16,7 @@ a, p, span, select, input, textarea, button, label, ul, li {
     text-decoration: none;
     color: black;
 }
-select {
+select, option {
     text-align: center;
 }
 h1, h2, h3, h4 {
