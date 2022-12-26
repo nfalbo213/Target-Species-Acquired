@@ -91,8 +91,14 @@ function itemToCart(event, target) {
 };
 
 function buttonMessage(target) {
+    /*if (target.dataset.bttntype === 'home') {
+        target.textContent = 'Go to Cart';
+        target.dataset.nav = 'viewCart';
+    } else {
+        target.textContent = 'Update Cart';
+    }*/
     target.textContent = 'Update Cart';
-}
+};
 
 const cartUpdateDisplay = (target) => {
     const cartUpdateArr = document.querySelectorAll('.cart-update');

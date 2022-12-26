@@ -20,6 +20,7 @@ import { form, handleSubmit } from "./contact.js";
 import { itmbttnArr, buttonMessage, cartUpdateDisplay, itemToCart, specialOrderMessage, multiOrdBttnMessage } from "./addToCart.js";
 import { createOptions } from "./renderOptions.js";
 import { playPauseBttn, animateHome, setPlayPauseBttn } from "./imageTransition.js";
+import { cartUpdateMsg } from "./cartUpdateMsg.js";
 // **READ** MIGHT NOT NEED accessibility.js - DELETE FILE BEFORE PUBLISHING IF NOT
 //import { ariaHiddenArr, setAriaHidden } from "../accesssibility.js";
 
@@ -77,7 +78,7 @@ itmbttnArr.forEach(target => {
             itemToCart(event, target);
             buttonMessage(target);
             cartUpdateDisplay(target);
-            alert('Cart Updated!');
+            cartUpdateMsg();
         }
     });
 });

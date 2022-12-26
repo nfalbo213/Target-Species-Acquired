@@ -21,6 +21,7 @@ import { itmbttnArr, buttonMessage, itemToCart, specialOrderMessage } from "./ad
 import { chckOrdrSumHght } from "./cartDisplay.js"
 import { createOptions } from "./renderOptions.js"
 import { setHomeSize } from "./homeDisplay.js";
+import { cartUpdateMsg } from "./cartUpdateMsg.js";
 
 // WINDOW EVENTS ///////////////////////////
 
@@ -70,7 +71,8 @@ itmbttnArr.forEach(function(target) {
             buttonMessage(target);
             // ensure total updates when cart update buttons clicked
             findLocalItems();
-            alert('Cart Updated!');
+            cartUpdateMsg();
+            //alert('Cart Updated!');
         }
     });
 });
