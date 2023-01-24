@@ -62,7 +62,7 @@ const calculateShipping = (total) => {
         shippingTotal.innerText = "$0.00";
         return 0;
     } else {
-        shippingTotal.innerHTML = "$5.00";
+        shippingTotal.innerText = "$5.00";
         return 5;
     }
 }
