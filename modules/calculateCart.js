@@ -58,7 +58,7 @@ const calculateTaxes = (total) => {
 }
 
 const calculateShipping = (total) => {
-    if (total >= 75) {
+    if (total >= 50) {
         shippingTotal.innerText = "$0.00";
         return 0;
     } else {
