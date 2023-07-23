@@ -46,7 +46,7 @@ h4 {
     text-align: center;
     opacity: .85;
     position: fixed;
-    z-index: 99;
+    z-index: 98;
     border-radius: 5%;
     box-shadow: 0px 5px 5px rgb(130, 130, 130);
 }
@@ -64,7 +64,7 @@ h4 {
     opacity: .95;
     background-color: #FFFFFF;
     overflow: hidden;
-    z-index: 99;
+    z-index: 98;
 }
 
 @media screen and (max-width: 600px) {
@@ -419,6 +419,57 @@ h1 span {
 }
 
 /* Shop Section */
+.pop-up-frame {
+    background-color: black;
+    opacity: .98;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+}
+.zoomed-img {
+    height: 80%;
+    width: 80%;
+    border-radius: 15px;
+}
+.pop-up-exit-button {
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    border: 0;
+    background-color: black;
+    padding-left: 75%;
+    margin-bottom: 1%;
+}
+@media screen and (max-width: 600px) {
+    .pop-up-exit-button {
+        padding-left: 65%;
+    }
+}
+/* make two botton spans cross for an 'x' */
+.cross-one, .cross-two {
+    display: block;
+    position: absolute;
+    border: 0;
+    border-radius: 15px;
+    background-color: white;
+    height: 5px;
+    width: 40px;
+}
+.cross-one {
+    transform: rotate(45deg);
+}
+.cross-two {
+    transform: rotate(-45deg);
+}
 .product-asile-wrapper {
     display: flex;
     flex-direction: row;
@@ -460,6 +511,7 @@ h1 span {
     width: 200px;
     border-radius: 15px;
     margin-top: 5%;
+    cursor: pointer;
 }
 .item-input {
     text-align: center;
