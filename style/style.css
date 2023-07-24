@@ -421,8 +421,7 @@ h1 span {
 
 /* Shop Section */
 .pop-up-frame {
-    background-color: black;
-    opacity: .98;
+    background-color: rgba(0, 0, 0, 0.95);
     position: fixed;
     display: none;
     flex-direction: column;
@@ -446,7 +445,7 @@ h1 span {
     height: 55px;
     width: 55px;
     border: 0;
-    background-color: black;
+    background-color: transparent;
     padding-left: 75%;
     margin-bottom: 1%;
 }
