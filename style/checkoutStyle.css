@@ -20,6 +20,7 @@ a, p, span, select, input, textarea, button, label {
 }
 select, option {
     text-align: center;
+    cursor: pointer;
 }
 h1, h2, h3, h4 {
     font-family: /*'Roboto Condensed',*/ 'Roboto', sans-serif;
