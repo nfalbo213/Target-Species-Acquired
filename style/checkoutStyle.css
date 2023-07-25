@@ -233,6 +233,56 @@ nav li {
     background-color: #FFFFFF;
 }
 /* checkout */
+.pop-up-frame {
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+}
+.zoomed-img {
+    height: 80%;
+    width: 80%;
+    border-radius: 15px;
+}
+.pop-up-exit-button {
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    border: 0;
+    background-color: transparent;
+    padding-left: 75%;
+    margin-bottom: 1%;
+}
+@media screen and (max-width: 600px) {
+    .pop-up-exit-button {
+        padding-left: 65%;
+    }
+}
+/* make two botton spans cross for an 'x' */
+.cross-one, .cross-two {
+    display: block;
+    position: absolute;
+    border: 0;
+    border-radius: 15px;
+    background-color: white;
+    height: 5px;
+    width: 40px;
+}
+.cross-one {
+    transform: rotate(45deg);
+}
+.cross-two {
+    transform: rotate(-45deg);
+}
 .checkout-item-wrapper {
     display: flex;
     flex-direction: row;
@@ -336,6 +386,7 @@ nav li {
     height: 100px;
     width: 100px;
     border-radius: 15px;
+    cursor: pointer;
 }
 .item-input {
     text-align: center;
