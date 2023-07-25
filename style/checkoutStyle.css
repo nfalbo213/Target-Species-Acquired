@@ -249,9 +249,15 @@ nav li {
     z-index: 99;
 }
 .zoomed-img {
-    height: 80%;
-    width: 80%;
+    height: 28em;
+    width: 28em;
     border-radius: 15px;
+}
+@media screen and (max-width: 600px) {
+    .zoomed-img {       
+        height: 18em;
+        width: 18em;
+    }
 }
 .pop-up-exit-button {
     cursor: pointer;
@@ -264,7 +270,7 @@ nav li {
 }
 @media screen and (max-width: 600px) {
     .pop-up-exit-button {
-        padding-left: 65%;
+        padding-left: 70%;
     }
 }
 /* make two botton spans cross for an 'x' */
