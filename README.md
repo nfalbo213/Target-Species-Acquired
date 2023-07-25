@@ -13,5 +13,6 @@ Adding New Item:
 2) Add item to cart.html
 3) Update calculateTotal() in calculateCart.js
 4) Update getItemIdNum() in checkOut.js
-5) (if using warehouse database) Update stockCheck.js
-6) Update pricing on server
+5) Update setImage() in imagePopUp.js
+6) (if using warehouse database) Update stockCheck.js
+7) Update pricing on server
