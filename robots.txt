@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: *#*
+Disallow: *thank-you*
+
+Sitemap: https://www.tsalures.com/sitemap.xml
