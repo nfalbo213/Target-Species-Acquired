@@ -106,22 +106,22 @@ const navLink = (target) => {
     if (target.id === 'nav0') {
         navObject.navButtonClicked = true;
         burgerSpin();
-        window.location.replace("./index.html#home");
+        window.location.replace("./#home");
     }
     if (target.id === 'nav1') {
         navObject.navButtonClicked = true;
         burgerSpin();
-        window.location.replace("./index.html#shop");
+        window.location.replace("./#shop");
     }
     if (target.id === 'nav2') {
         navObject.navButtonClicked = true;
         burgerSpin();
-        window.location.replace("./index.html#about");
+        window.location.replace("./#about");
     }
     if (target.id === 'nav3') {
         navObject.navButtonClicked = true;
         burgerSpin();
-        window.location.replace("./index.html#contact");
+        window.location.replace("./#contact");
     } else {
         return;
     }
