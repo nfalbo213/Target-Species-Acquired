@@ -18,8 +18,8 @@ const topSpan = document.getElementById('top-span');
 const middleSpan = document.getElementById('middle-span');
 const bottomSpan = document.getElementById('bottom-span');
 const mobileNavList = document.getElementById('mobile-nav-list');
-//const sectionArr = document.querySelectorAll('.section-class');
-const sectionImgArr = document.querySelectorAll('.section-img')
+const sectionArr = document.querySelectorAll('.section-class');
+//const sectionImgArr = document.querySelectorAll('.section-img')
 ////////////////////
 // Global Variables
 const hamburger = document.getElementById('hamburger');
@@ -54,7 +54,7 @@ const setSectionPadding = (event) => {
         }
     }
     */
-   /*
+   
     if (width > 600) {
         sectionArr.forEach(function(target) {
             target.style.paddingTop = "150px";
@@ -64,7 +64,8 @@ const setSectionPadding = (event) => {
             target.style.paddingTop = "100px";
         });
     }
-    */
+    
+   /*
     if (width > 600) {
         sectionImgArr.forEach(target => {
             target.style.height = "150px";
@@ -76,6 +77,7 @@ const setSectionPadding = (event) => {
             target.style.width = "100px";
         });
     }
+    */
 }
 
 const delayedAnimation = () => {
