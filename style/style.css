@@ -420,6 +420,12 @@ h1 span {
 }
 
 /* Shop Section */
+.mid-section-img-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 .pop-up-frame {
     background-color: rgba(0, 0, 0, 0.95);
     position: fixed;
