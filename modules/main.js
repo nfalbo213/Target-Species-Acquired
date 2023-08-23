@@ -30,10 +30,10 @@ const multiOrdBttnArr = document.querySelectorAll('.ten-plus-order');
 
 window.addEventListener ('load', (event) => {
     event.preventDefault();
+    setHomeSize(true);
     navHeightSet();
     createOptions();
     setSectionPadding(event);
-    setHomeSize(true);
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
