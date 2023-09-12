@@ -28,9 +28,9 @@ const multiOrdBttnArr = document.querySelectorAll('.ten-plus-order');
 
 // WINDOW EVENTS ///////////////////////////
 
-window.addEventListener ('load', (event) => {
+window.addEventListener ('load', async (event) => {
     event.preventDefault();
-    setHomeSize(true);
+    await setHomeSize(true);
     navHeightSet();
     createOptions();
     setSectionPadding(event);

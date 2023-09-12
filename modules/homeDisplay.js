@@ -22,7 +22,7 @@ const checkWidth = () => {
 }
 
 // Exported Functions
-function setHomeSize(isHomePage) {
+async function setHomeSize(isHomePage) {
     if (!isHomePage) {
         homeWrapper.style.height = `${checkHeight()-checkFooterHeight()}px`;
         homeWrapper.style.width = `${checkWidth()}px`;
