@@ -320,17 +320,12 @@ nav li {
 .cross-two {
     transform: rotate(-45deg);
 }
-.product-asile-wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
 .mobile-span {
     display: none;
     height: 1px;
     background-color: rgb(130, 130, 130);
     width: 100%;
+    margin: 3%;
 }
 
 @media screen and (max-width: 600px) {
