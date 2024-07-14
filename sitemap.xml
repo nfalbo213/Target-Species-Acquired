@@ -10,6 +10,11 @@
 <priority>0.2</priority>
 </url>
 <url>
+<url>
+<loc>https://tsalures.com/braggin-boards</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
 <loc>https://tsalures.com/thank-you</loc>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
