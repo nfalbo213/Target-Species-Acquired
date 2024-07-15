@@ -4,10 +4,12 @@ SPDX-License-Identifier: Apache-2.0
 */
 import { hamburger, navMobileArr, navHeightSet, burgerSpin, navLink } from "./mobileNavBar.js";
 import { buttonArr, targetGrow, targetShrink } from "./targetHover.js";
+import { findLocalItems } from "./cartDispBragginBoards.js";
 
 window.addEventListener ('load', (event) => {
     event.preventDefault();
     navHeightSet();
+    findLocalItems();
 });
 window.addEventListener ('resize', (event) => {
     event.preventDefault();
