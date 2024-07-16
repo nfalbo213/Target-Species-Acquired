@@ -27,6 +27,7 @@ const navZero = document.getElementById('nav0');
 const navOne = document.getElementById('nav1');
 const navTwo = document.getElementById('nav2');
 const navThree = document.getElementById('nav3');
+const navFour = document.getElementById('nav4');
 const navMobileArr = document.querySelectorAll('.nav-button');
 let navObject = {hamburgerClicked: false, navButtonClicked: false, largeHeight: true, isScrolling: true};
 const navLinkArr = document.querySelectorAll('.nav-link');
@@ -138,6 +139,11 @@ const navLink = (target) => {
         navObject.navButtonClicked = true;
         burgerSpin();
         window.location.replace("./#contact");
+    } 
+    if (target.id === 'nav4') {
+        navObject.navButtonClicked = true;
+        burgerSpin();
+        window.location.replace("./braggin-boards.html");
     } else {
         return;
     }
