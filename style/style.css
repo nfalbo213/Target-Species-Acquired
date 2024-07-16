@@ -157,7 +157,7 @@ nav li {
 @media screen and (max-width: 600px) {
     .burger-cart-wrapper {
         height: 100px;
-        width: 120px;
+        width: 100px;
     }
 }
 
