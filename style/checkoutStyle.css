@@ -120,7 +120,7 @@ nav li {
     display: none;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 995px) {
     .mobile-nav-list {
         display: none;
         flex-direction: column;
@@ -149,7 +149,7 @@ nav li {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 995px) {
     .nav-list {
         display: none;
     }
@@ -177,7 +177,7 @@ nav li {
     width: 45px;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 995px) {
     .cart-wrapper {
         height: 25px;
         width: 25px;
@@ -206,7 +206,7 @@ nav li {
     user-select: none;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 995px) {
     .hamburger {
         display: flex;
     }

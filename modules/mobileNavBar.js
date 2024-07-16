@@ -143,7 +143,7 @@ const navLink = (target) => {
     if (target.id === 'nav4') {
         navObject.navButtonClicked = true;
         burgerSpin();
-        window.location.replace("./braggin-boards.html");
+        window.location.replace("./braggin-board.html");
     } else {
         return;
     }
