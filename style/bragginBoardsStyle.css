@@ -107,7 +107,7 @@ main {
     .nav-logo {
         height: 100px;
         width: 100px;
-        padding-right: 50px;
+        /*padding-right: 50px;*/
         /* 50px to match .burger-cart-wrapper 150px width (50 more than logo width)*/
     }
 }
@@ -143,6 +143,7 @@ nav li {
         margin-inline-start: 0px;
         margin-inline-end: 0px;
         padding-inline-start: 0px;
+        width: 33%;
     }
 }
 
@@ -171,7 +172,7 @@ nav li {
     height: 150px;
     width: 150px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     /* position fixed allows for options to cascade from top of screen */
     /*position: fixed;*/
@@ -180,7 +181,7 @@ nav li {
 @media screen and (max-width: 600px) {
     .burger-cart-wrapper {
         height: 100px;
-        width: 150px;
+        width: 120px;
     }
 }
 
