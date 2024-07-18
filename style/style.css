@@ -225,8 +225,6 @@ nav li {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100%;
-    width: 100%;
 }
 .home-text-wrapper {
     display: flex;
