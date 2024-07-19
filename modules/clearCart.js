@@ -1,5 +1,5 @@
 /*
-Copyright 2024 Nick Falbo (https://nick.falbo.dev)
+Copyright 2022 Nick Falbo (https://nick.falbo.dev)
 SPDX-License-Identifier: Apache-2.0
 */
 
