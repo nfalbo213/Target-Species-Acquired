@@ -50,6 +50,8 @@ main {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 @media screen and (max-width: 600px) {
     .braggin-img-wrapper {
