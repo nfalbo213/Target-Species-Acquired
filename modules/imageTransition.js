@@ -10,7 +10,7 @@ let imgNum = 0;
 let isPaused = false;
 
 const resetImgNum = (num) => {
-    if (num === 4) {
+    if (num === 5) {
         imgNum = 0;
     } else {
         return;
@@ -23,9 +23,10 @@ const imageTransition = () => {
         "./style/images/new_firecraw.jpg",
         "./style/images/c_invertED_NatBornGiller.jpeg",
         "./style/images/c_Ian_M450.jpeg",
-        "./style/images/bluegill.jpg"
+        "./style/images/bluegill.jpg",
+        "./style/images/c_Ethan_Slideshow.jpg"
     ];
-    if (imgNum === 0 || imgNum === 4) {
+    if (imgNum === 0 || imgNum === 5) {
         resetImgNum(imgNum);
         homeWrapper.style.backgroundImage = `url("${imgArr[imgNum]}")`;
         imgNum++;
@@ -39,6 +40,10 @@ const imageTransition = () => {
         imgNum++;
     }
     else if (imgNum === 3) {
+        homeWrapper.style.backgroundImage = `url("${imgArr[imgNum]}")`;
+        imgNum++;
+    }
+    else if (imgNum === 4) {
         homeWrapper.style.backgroundImage = `url("${imgArr[imgNum]}")`;
         imgNum++;
     }
